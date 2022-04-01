@@ -13,8 +13,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "connect-mongo": "^4.6.0",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.2.9",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^7.0.0",
     "path": "^0.12.7"
   },
   "devDependencies": {
