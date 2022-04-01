@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 const app = express()
 const cors = require('cors')
-
+const DataBase = require('./database')
 
 // ** MIDDLEWARE ** //
 const whitelist = ['http://localhost:3000', 'http://localhost:5000', 'https://salamet.herokuapp.com/']
