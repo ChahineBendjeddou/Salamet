@@ -32,7 +32,7 @@ app.use(cors(corsOptions))
 
 
 app.get('/api', (req, res) => {
-
+    res.send('hello world')
 })
-
-app.listen(5000, () => console.log('Server Started on port 5000'))
+const port = process.env.PORT || 5000
+app.listen(port, () => console.log('Server Started on port ' + port))
