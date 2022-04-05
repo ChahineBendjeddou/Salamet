@@ -7,7 +7,7 @@ const ImageSchema = new Schema({
     filename: String
 });
 
-const accidentShema = new Schema({
+const accidentSchema = new Schema({
 
     location: {
         type: [Number],
@@ -30,4 +30,4 @@ const accidentShema = new Schema({
 })
 
 
-module.exports = mongoose.model('Accident', accidentShema);
+module.exports = mongoose.model('Accident', accidentSchema);
