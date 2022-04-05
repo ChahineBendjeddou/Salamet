@@ -3,6 +3,8 @@ const path = require('path')
 const app = express()
 const cors = require('cors')
 const DataBase = require('./database')
+const userRoutes = require('./routes/users');
+const blogRoutes = require('./routes/blogs');
 
 // ** MIDDLEWARE ** //
 const whitelist = ['http://localhost:3000', 'http://localhost:5000', 'https://salamet.herokuapp.com/']
@@ -19,6 +21,9 @@ const corsOptions = {
     }
 }
 app.use(cors(corsOptions))
+
+app.use('/', userRoutes)
+app.use('/blog', blogRoutes)
 
 app.get('/api', (req, res) => {
     res.send('hello world')
