@@ -8,7 +8,8 @@
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server",
-    "dev": "nodemon server"
+    "build": "cd client && npm run build",
+    "dev":"nodemon server"
   },
   "keywords": [],
   "author": "",
