@@ -13,10 +13,6 @@ const accidentSchema = new Schema({
         type: [Number],
         required: true
     },
-    date: {
-        type: Date,
-        default: Date.now()
-    },
     reporter: {
         type: Schema.Type.ObjectId,
         ref: 'User'
@@ -26,8 +22,7 @@ const accidentSchema = new Schema({
         required: true
     },
     images: [ImageSchema]
-
-})
+}, { timestamps: true })
 
 
 module.exports = mongoose.model('Accident', accidentSchema);
