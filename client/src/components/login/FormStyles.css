@@ -5,9 +5,12 @@ label {
 form {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
     margin: auto;
     max-width: 600px;
+    padding-top: 10rem;
 }
 
 form label {
@@ -22,4 +25,17 @@ form input, textarea {
     background: rgba(255,255,255,.1);
     border-color: rgba(255,255,255,.1);
     color: #f4f4f4;
+}
+form .question{
+    color: #f4f4f4;
+    justify-content: center;
+    text-align: center;
+    margin-top: 15px;
+}
+
+form .question span{
+    color: red;
+    text-decoration: underline;
+    font-weight: 300px;
+    text-transform: uppercase;
 }

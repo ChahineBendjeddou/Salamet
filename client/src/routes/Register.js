@@ -1,16 +1,16 @@
 import React from 'react'
 import Footer from '../components/footer/Footer'
 import Navbar from '../components/navbar/Navbar'
-import Video from '../components/landing/Video'
+import Form from '../components/contact-us/Form'
 
-const Home = () => {
+const Contact = () => {
     return (
         <div>
             <Navbar />
-            <Video />
-            <Footer />
+            <Form />
+            <Footer/>
         </div>
     )
 }
 
-export default Home
+export default Contact

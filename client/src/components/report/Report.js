@@ -1,9 +1,9 @@
 import React from 'react'
-import './HeroImageStyles.css'
+import '../hero/HeroImageStyles.css'
 import { Link } from 'react-router-dom'
 import './ReportStyles.css'
-import Ambulance from '../assets/ambulance.jpg'
-import Phone from '../assets/sos.jpg'
+import Ambulance from '../../assets/ambulance.jpg'
+import Phone from '../../assets/sos.jpg'
 const Report = () => {
     return (
        <div className='Report'>

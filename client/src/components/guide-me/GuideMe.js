@@ -1,8 +1,8 @@
 import React from 'react'
 import './GuideMeStyles.css'
 import {Link} from 'react-router-dom'
-import Map from '../assets/map.jpg'
-import Phone from '../assets/Phone.jpg'
+import Map from '../../assets/map.jpg'
+import Phone from '../../assets/Phone.jpg'
 
 const GuideMe = () => {
     return (
@@ -10,7 +10,7 @@ const GuideMe = () => {
             <div className='left'>
                 <h1>Guide Me</h1>
                 <p>Simple tool that is going to alert you whenever you are near a red point or in a bad weather ,because simply we care about your safty</p>
-                <Link to='/contact'>
+                <Link to='/Register'>
                     <button className='btn'>Contact</button>
                 </Link>
             </div>

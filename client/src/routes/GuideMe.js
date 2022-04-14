@@ -1,8 +1,8 @@
 import React from 'react'
-import Footer from '../components/Footer'
-import HeroImage from '../components/HeroImage'
-import Navbar from '../components/Navbar'
-import GuideMeSection from '../components/GuideMe'
+import Footer from '../components/footer/Footer'
+import HeroImage from '../components/hero/HeroImage'
+import Navbar from '../components/navbar/Navbar'
+import GuideMeSection from '../components/guide-me/GuideMe'
 
 const GuideMe = () => {
     return (

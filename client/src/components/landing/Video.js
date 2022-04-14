@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './VideoStyles.css'
-import trafficVideo from '../assets/video.mp4'
+import trafficVideo from '../../assets/video.mp4'
 
 const Video = () => {
     return (
@@ -10,7 +10,7 @@ const Video = () => {
                 <source src={trafficVideo} type='video/mp4' />
             </video>
             <div className='content'>
-                <h1>SAFTY Dz</h1>
+                <h1>SALAMAT</h1>
                 <p>DZ FIRST TRAFFIC SAFTY AGENCY</p>
                 <div>
                     <Link to='/Report' className='btn'>REPORT</Link>

@@ -1,8 +1,8 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import Picture from '../components/Report'
-import HeroImage from '../components/HeroImage'
+import Navbar from '../components/navbar/Navbar'
+import Footer from '../components/footer/Footer'
+import Picture from '../components/report/Report'
+import HeroImage from '../components/hero/HeroImage'
 
 
 const Pricing = () => {
