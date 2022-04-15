@@ -41,9 +41,15 @@ export default function Settings() {
           <option value="O+">O+</option>
           <option value="O-">O-</option>
           </select>
+          <div className="buttons">
           <button className="btn" type="submit">
             UPDATE
           </button>
+          <button className="btn" type="submit">
+             DELETE
+          </button>
+          </div>
+        
         </form>
       </div>
      
