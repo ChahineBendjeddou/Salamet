@@ -4,6 +4,7 @@ import Navbar from '../components/navbar/Navbar'
 import Video from '../components/landing/Video'
 
 const Home = () => {
+
     return (
         <div>
             <Navbar />

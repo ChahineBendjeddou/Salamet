@@ -1,23 +1,34 @@
 const User = require('../models/user');
 
 
-module.exports.renderRegister = (req, res) => {
-
-}
 
 module.exports.register = async (req, res, next) => {
-
+    try {
+        const { firstname, lastname, username, email, password, phone, bloodType } = req.body
+        const user = new User({ firstname, lastname, username, email, phone, bloodType })
+        const registeredUser = await User.register(user, password)
+        console.log('user: ', user)
+        console.log('Registered user: ', registeredUser)
+        req.login(registeredUser, err => {
+            if (err) return next(err)
+            res.redirect('/')
+        })
+    } catch (error) {
+        console.log('err : ', error)
+        res.redirect('/register')
+    }
 }
 
 
-module.exports.renderLogin = (req, res) => {
-
-}
 
 module.exports.login = (req, res) => {
-
+    res.redirect('/')
+}
+module.exports.sendUser = (req, res) => {
+    res.send(req.user)
 }
 
 module.exports.logout = (req, res) => {
-
+    req.logout()
+    res.redirect('/')
 }

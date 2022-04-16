@@ -7,9 +7,9 @@ const Contact = () => {
     return (
         <div>
             <Navbar />
-            
+
             <LogIn />
-            <Footer/>
+            <Footer />
         </div>
     )
 }

@@ -5,9 +5,9 @@ export default function Settings() {
   return (
     <div className="settings">
       <div className="settingsWrapper">
-          <Navbar />
+        <Navbar />
         <form className="settingsForm">
-        <h1>UPDATE YOUR PROFILE </h1>
+          <h1>UPDATE YOUR PROFILE </h1>
           <label>Profile Picture</label>
           <div className="settingsPP">
             <img
@@ -32,22 +32,22 @@ export default function Settings() {
           <input type="password" placeholder="Password" name="password" />
           <label>Blood Type</label>
           <select id="BloodType" name="Blood">
-          <option value="A+">A+</option>
-          <option value="A-">A-</option>
-          <option value="B+">B+</option>
-          <option value="B-">B-</option>
-          <option value="AB+">AB+</option>
-          <option value="AB-">AB-</option>
-          <option value="O+">O+</option>
-          <option value="O-">O-</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
           </select>
           <button className="btn" type="submit">
             UPDATE
           </button>
         </form>
       </div>
-     
+
     </div>
-   
+
   );
 }

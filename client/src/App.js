@@ -1,14 +1,17 @@
 import React from 'react'
-import {Routes, Route} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 import Register from './routes/Register';
-import LogIn from './routes/LogIn.js';
+import LogIn from './routes/LogIn';
 import Home from './routes/Home'
 import Report from './routes/Report'
 import GuideMe from './routes/GuideMe';
 import Settings from './routes/Settings/Settings';
 
+
 function App() {
+
+
   return (
     <>
       <Routes>
