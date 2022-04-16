@@ -65,7 +65,7 @@ export default function Navbar() {
   //getting data from backend
   let [user, setUser] = useState()
   async function getLoggedinUser() {
-    await axios.get('http://localhost:5000/login', { withCredentials: true })
+    await axios.get('/login', { withCredentials: true })
       .then(res => setUser(res.data))
       .catch(err => console.log(err))
 
