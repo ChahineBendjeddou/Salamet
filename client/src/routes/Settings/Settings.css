@@ -101,3 +101,6 @@
     background-color: rgba(66, 0, 0, 0.85);
     transition: 5s;
   }
+   .buttons{
+    text-align: center;
+  }
