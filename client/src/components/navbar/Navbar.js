@@ -57,23 +57,13 @@ import "./NavbarStyles.css";
 import axios from 'axios'
 
 
-
-
 export default function Navbar() {
-
-
-  //getting data from backend
-  let [user, setUser] = useState()
-  async function getLoggedinUser() {
-    await axios.get('/login', { withCredentials: true })
+  //getting the currentUser from backend
+  let [user, setUser] = useState(async () => {
+    await axios.get('/getUser', { withCredentials: true })
       .then(res => setUser(res.data))
       .catch(err => console.log(err))
-
-  }
-  getLoggedinUser()
-
-
-
+  })
 
   const [click, setClick] = useState(false)
   const handleClick = () => setClick(!click)
@@ -88,14 +78,12 @@ export default function Navbar() {
       }
 
       window.addEventListener('scroll', changeColor)*/
-  console.log('rafik', user)
   return (
     <div className="top">
       <div className="topLeft">
         <h1>SALAMAT</h1>
       </div>
       <div className="topCenter">
-
         <ul className={click ? 'nav-menu active' : 'nav-menu'} >
           <li className="topListItem">
             <Link className="link" to="/">HOME</Link>
@@ -106,8 +94,6 @@ export default function Navbar() {
           <li className="topListItem">
             <Link className="link" to="/GuideMe">GUIDE ME</Link>
           </li>
-
-
           {user &&
             <li className="topListItem">
               <Link className="link" to="/">DONATE</Link>
@@ -123,13 +109,10 @@ export default function Navbar() {
               <a href="/logout">LOGOUT</a>
             </li>
           }
-
         </ul>
       </div>
       <div className="topRight">
-
         {user ? (
-
           <Link className="link" to="/Settings">
             <img
               className="topImg"
