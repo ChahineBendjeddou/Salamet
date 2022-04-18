@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
 import Register from './routes/Register';
@@ -7,13 +7,12 @@ import Home from './routes/Home'
 import Report from './routes/Report'
 import GuideMe from './routes/GuideMe';
 import Settings from './routes/Settings/Settings';
-
+import Navbar from './components/navbar/Navbar'
 
 function App() {
-
-
   return (
     <>
+      <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/Report' element={<Report />} />
