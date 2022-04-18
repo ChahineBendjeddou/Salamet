@@ -16,7 +16,7 @@ const Form = () => {
         <label for='email'>Email</label>
         <input type="email" id='email' name='email' required placeholder="Email"></input>
         <label for='phone'>Phone number</label>
-        <input type="text" id='phone' name='phone' required placeholder="Phone number"></input>
+        <input type="number" id='phone' name='phone' required placeholder="Phone number"></input>
         <label for='bloodType'>Blood Type</label>
         <select id="bloodType" name="bloodType" required>
           <option value="A+">A+</option>
