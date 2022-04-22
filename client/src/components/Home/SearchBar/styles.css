@@ -1,0 +1,38 @@
+.searchBar-wrap {
+  display: flex;
+  white-space: nowrap;
+  width: fit-content;
+  margin: 2.5rem auto 4rem auto;
+  padding: 0.5rem;
+  border-radius: 5px;
+
+}
+
+.searchBar-wrap form, input {
+  display: flex;
+  outline: none;
+  border: none;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 10px 18px;
+  font-size: 1.2rem;
+  font-family: "Outfit", sans-serif;
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #f4f4f4;
+}
+
+.searchBar-wrap span {
+  padding-right: 0.5rem;
+  cursor: pointer;
+}
+
+.searchBar-wrap button {
+  display: inline-block;
+  outline: none;
+  border: none;
+  padding: 0.3rem 1rem;
+  border-radius: 5px;
+  background-color: #5a6d88;
+  color: #fff;
+  cursor: pointer;
+}

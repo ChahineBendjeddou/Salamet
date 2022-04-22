@@ -89,14 +89,10 @@ export default function Navbar() {
           </li>
          
 
+
           {user &&
           <li className="topListItem">
-              <Link className="link" to="/">DONATE</Link>
-           </li>
-          }
-          {user &&
-          <li className="topListItem">
-              <Link className="link" to="/">BLOG</Link>
+              <Link className="link" to="/BlogHome">BLOG</Link>
            </li>
           }
           {user &&
@@ -117,7 +113,7 @@ export default function Navbar() {
             />
           </Link>
         ) : (
-          <ul className="topList">
+          <ul className={click ? "topList" : "nav-menu"}>
             <li className="topListItem">
               <Link className="link" to="/LogIn">
                 LOGIN
