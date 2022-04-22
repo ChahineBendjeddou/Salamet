@@ -5,18 +5,15 @@ import './FormStyles.css'
 const Form = () => {
     return (
         <div className='form'>
-            <form>
-              
-                <label>Email</label>
-                <input type='email'></input>
-               
-                <label>Password</label>
-                <input type='password'></input>
-               
-                <button className='btn'>Submit</button>
+            <form action='/login' method='post'>
+                <label for='username'>Username</label>
+                <input type='text' id='username' name='username' autoFocus required></input>
+                <label for='password'>Password</label>
+                <input type='password' id='password' name='password' required></input>
+                <button className='btn'>Login</button>
                 <div className='question'>
-                <Link to='/Register'> Don't have an account yet ? <span> Click here</span></Link>
-                </div>  
+                    <Link to='/Register'> Don't have an account yet ? <span> Click here</span></Link>
+                </div>
             </form>
         </div>
     )

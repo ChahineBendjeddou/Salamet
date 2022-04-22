@@ -1,8 +1,10 @@
 const mongoose = require('mongoose')
-require('dotenv').config();
+if (process.env.NODE_ENV !== "production") {
+    require('dotenv').config();
+}
 const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/salamet'
 
-
+console.log(dbUrl)
 class Database {
 
     constructor() {

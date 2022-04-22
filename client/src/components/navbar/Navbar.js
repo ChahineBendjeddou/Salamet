@@ -50,43 +50,51 @@ export default Navbar*/
 
 
 
-import React, {useState} from 'react'
-import {Link} from 'react-router-dom'
-import {FaBars, FaTimes} from 'react-icons/fa'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { FaBars, FaTimes } from 'react-icons/fa'
 import "./NavbarStyles.css";
+import axios from 'axios'
+
 
 export default function Navbar() {
-  const user = true;
-  const[click, setClick] = useState(false)
-    const handleClick = () => setClick(!click)
+  //getting the currentUser from backend
+  let [user, setUser] = useState(async () => {
+    await axios.get('/getUser', { withCredentials: true })
+      .then(res => setUser(res.data))
+      .catch(err => console.log(err))
+  })
 
-   /* const [color, setColor] = useState(false)
-        const changeColor =() => {
-            if(window.scrollY >= 100) {
-                setColor(true)
-            } else {
-                setColor(false)
-            }
-        }
+  const [click, setClick] = useState(false)
+  const handleClick = () => setClick(!click)
 
-        window.addEventListener('scroll', changeColor)*/
+  /* const [color, setColor] = useState(false)
+      const changeColor =() => {
+          if(window.scrollY >= 100) {
+              setColor(true)
+          } else {
+              setColor(false)
+          }
+      }
+
+      window.addEventListener('scroll', changeColor)*/
   return (
     <div className="top">
-        <div className="topLeft">
-           <h1>SALAMAT</h1>
-        </div>
+      <div className="topLeft">
+        <h1>SALAMAT</h1>
+      </div>
       <div className="topCenter">
-
         <ul className={click ? 'nav-menu active' : 'nav-menu'} >
           <li className="topListItem">
             <Link className="link" to="/">HOME</Link>
           </li>
           <li className="topListItem">
-              <Link className="link" to="/Report">REPORT</Link>
+            <Link className="link" to="/Report">REPORT</Link>
           </li>
           <li className="topListItem">
-              <Link className="link" to="/GuideMe">GUIDE ME</Link>
+            <Link className="link" to="/GuideMe">GUIDE ME</Link>
           </li>
+<<<<<<< HEAD
          
 
 
@@ -94,17 +102,27 @@ export default function Navbar() {
           <li className="topListItem">
               <Link className="link" to="/BlogHome">BLOG</Link>
            </li>
+=======
+          {user &&
+            <li className="topListItem">
+              <Link className="link" to="/">DONATE</Link>
+            </li>
           }
           {user &&
-          <li className="topListItem">LOGOUT</li>
+            <li className="topListItem">
+              <Link className="link" to="/">BLOG</Link>
+            </li>
+>>>>>>> 5addb09c22b9d382b7733a44787d45df782e0282
           }
-
+          {user &&
+            <li className="topListItem">
+              <a href="/logout">LOGOUT</a>
+            </li>
+          }
         </ul>
       </div>
       <div className="topRight">
-
         {user ? (
-
           <Link className="link" to="/Settings">
             <img
               className="topImg"
@@ -126,9 +144,9 @@ export default function Navbar() {
             </li>
           </ul>
         )}
-         <div className='hamburger' onClick={handleClick}>
-            {click ? (<FaTimes size={20} style={{color: '#fff'}} />) : (<FaBars size={20} style={{color: '#fff'}} />)}
-         </div>
+        <div className='hamburger' onClick={handleClick}>
+          {click ? (<FaTimes size={20} style={{ color: '#fff' }} />) : (<FaBars size={20} style={{ color: '#fff' }} />)}
+        </div>
       </div>
     </div>
   );
