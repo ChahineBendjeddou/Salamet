@@ -1,23 +1,18 @@
-import React, { useState } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import React from 'react'
+import {Routes, Route} from 'react-router-dom'
 
 import Register from './routes/Register';
-import LogIn from './routes/LogIn';
+import LogIn from './routes/LogIn.js';
 import Home from './routes/Home'
 import Report from './routes/Report'
 import GuideMe from './routes/GuideMe';
 import Settings from './routes/Settings/Settings';
-<<<<<<< HEAD
 import Blog from './routes/Blog/index';
 import BlogHome from './routes/Home/index'
-=======
-import Navbar from './components/navbar/Navbar'
->>>>>>> 5addb09c22b9d382b7733a44787d45df782e0282
 
 function App() {
   return (
     <>
-      <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/Report' element={<Report />} />

@@ -114,9 +114,16 @@
   font-weight: 500;
   display: flex;
 }
-
+.Settings{
+  display: none;
+}
 .topListItem:hover {
   color: red;
+}
+.topListItemLeft{
+  display: inline;
+  padding: 5px;
+  font-size: 1.2rem;
 }
 
 .topImg {
@@ -173,6 +180,18 @@
   .nav-menu a {
     font-size: 2rem;
   }
+ .topImg{
+    display: none;
+  }
+  .Settings{
+    display: flex;
+    text-align: center;
+  }
+  .topListItemLeft{
+    display: none;
+  }
+  .topListItemLeft.active{
+    left: 0;
+  }
   
-
 }

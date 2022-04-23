@@ -1,30 +1,17 @@
-import React, { useState, useEffect } from 'react'
 import "./Settings.css";
-import axios from 'axios'
-export default function Settings() {
-  //getting the currentUser from backend
-  let [user, setUser] = useState(async () => {
-    await axios.get('/getUser', { withCredentials: true })
-      .then(res => setUser(res.data))
-      .catch(err => console.log(err))
-  })
+import { FaUserCircle } from 'react-icons/fa';
+import Navbar from '../../components/navbar/Navbar'
 
-  const updateUrl = `/${user._id}/update`
-  const deleteUrl = `/${user._id}/delete`
+export default function Settings() {
   return (
     <div className="settings">
       <div className="settingsWrapper">
-        <form className="settingsForm" method="post" action={updateUrl}>
-          <h1>UPDATE YOUR PROFILE </h1>
-          <label>Profile Picture</label>
+          <Navbar />
+        <form className="settingsForm">
+        <h1>UPDATE YOUR PROFILE </h1>
+        <FaUserCircle className="user"/>
           <div className="settingsPP">
-            <img
-              src="https://images.pexels.com/photos/6685428/pexels-photo-6685428.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-              alt=""
-            />
-            <label htmlFor="fileInput">
-              <i className="settingsPPIcon far fa-user-circle"></i>{" "}
-            </label>
+       
             <input
               id="fileInput"
               type="file"
@@ -32,26 +19,36 @@ export default function Settings() {
               className="settingsPPInput"
             />
           </div>
-          <label for='firstname'>FirstName</label>
-          <input type="text" id='firstname' name='firstname' required value={user.firstname} onChange={(e) => { setUser({ ...user, firstname: e.target.value }) }} ></input>
-          <label for='lastname'>LastName</label>
-          <input type="text" id='lastname' name='lastname' required value={user.lastname} onChange={(e) => { setUser({ ...user, lastname: e.target.value }) }}></input>
-          <label for='username'>Username</label>
-          <input type="text" id='username' name='username' required value={user.username} onChange={(e) => { setUser({ ...user, username: e.target.value }) }}></input>
-          <label for='email'>Email</label>
-          <input type="email" id='email' name='email' required value={user.email} onChange={(e) => { setUser({ ...user, email: e.target.value }) }}></input>
-          <label for='phone'>Phone number</label>
-          <input type="number" id='phone' name='phone' required value={user.phone} onChange={(e) => { setUser({ ...user, phone: e.target.value }) }}></input>
+          <label>Name</label>
+          <input type="text" placeholder="Salamat" name="name" />
+          <label>Email</label>
+          <input type="email" placeholder="Salamat@gmail.com" name="email" />
+          <label>Password</label>
+          <input type="password" placeholder="Password" name="password" />
+          <label>Blood Type</label>
+          <select id="BloodType" name="Blood">
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+          </select>
           <div className="buttons">
-            <button className="btn" type="submit">
-              UPDATE
-            </button>
-            <button className="btn">
-              <a href={deleteUrl}>DELETE ACCOUNT</a>
-            </button>
+          <button className="btn" type="submit">
+            UPDATE
+          </button>
+          <button className="btn" type="submit">
+             DELETE
+          </button>
           </div>
+        
         </form>
       </div>
+     
     </div>
+   
   );
 }

@@ -5,20 +5,16 @@ import "./FormStyles.css";
 const Form = () => {
   return (
     <div className="form">
-      <form action='/register' method='post'>
+      <form>
         <h1>Register</h1>
-        <label for='firstname'>FirstName</label>
-        <input type="text" id='firstname' name='firstname' required placeholder="FirstName"></input>
-        <label for='lastname'>LastName</label>
-        <input type="text" id='lastname' name='lastname' required placeholder="LastName"></input>
-        <label for='username'>Username</label>
-        <input type="text" id='username' name='username' required placeholder="UserName"></input>
-        <label for='email'>Email</label>
-        <input type="email" id='email' name='email' required placeholder="Email"></input>
-        <label for='phone'>Phone number</label>
-        <input type="number" id='phone' name='phone' required placeholder="Phone number"></input>
-        <label for='bloodType'>Blood Type</label>
-        <select id="bloodType" name="bloodType" required>
+        <label>Name</label>
+        <input type="text" placeholder="Name"></input>
+        <label>Email</label>
+        <input type="email" placeholder="Email"></input>
+        <label>Phone number</label>
+        <input type="text" placeholder="Phone number"></input>
+        <label>Blood Type</label>
+        <select id="BloodType" name="Blood">
           <option value="A+">A+</option>
           <option value="A-">A-</option>
           <option value="B+">B+</option>
@@ -28,11 +24,11 @@ const Form = () => {
           <option value="O+">O+</option>
           <option value="O-">O-</option>
         </select>
-        <label for='password'>Password</label>
-        <input type="password" id='password' name='password' required placeholder="Password"></input>
-        {/* <label>Confirm Password</label>
-        <input type="password" placeholder="Confirm Password"></input> */}
-        <button className="btn">Register</button>
+        <label>Password</label>
+        <input type="password" placeholder="Password"></input>
+        <label>Confirm Password</label>
+        <input type="password" placeholder="Confirm Password"></input>
+        <button className="btn">Submit</button>
         <div className="question">
           <Link to="/LogIn">
             Already have an account ?<span> Click here</span>
