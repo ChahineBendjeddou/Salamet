@@ -8,8 +8,7 @@ const Header = () => (
       <span>“</span> Salamet Blog <span>”</span>
     </h1>
     <p>
-      awesome place to make oneself <br /> productive and entertained through
-      daily updates.
+      The right place to keep yourself updated <br/> with the latest news about trrafic
     </p>
   </header>
 );

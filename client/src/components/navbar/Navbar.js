@@ -56,7 +56,7 @@ import {FaBars, FaTimes} from 'react-icons/fa'
 import "./NavbarStyles.css";
 
 export default function Navbar() {
-  const user = false;
+  const user = true;
   const[click, setClick] = useState(false)
     const handleClick = () => setClick(!click)
 
@@ -87,16 +87,18 @@ export default function Navbar() {
           <li className="topListItem">
               <Link className="link" to="/GuideMe">GUIDE ME</Link>
           </li>
+          {!user &&
           <li className="topListItem">
               <Link className="link" to="/LogIn">
                 LOGIN
               </Link>
-            </li>
+            </li>}
+            {!user &&
             <li className="topListItem">
               <Link className="link" to="/Register">
                 REGISTER
               </Link>
-            </li>
+            </li>}
          
           {user &&
           <li className="Settings">
