@@ -9,6 +9,8 @@ import GuideMe from './routes/GuideMe';
 import Settings from './routes/Settings/Settings';
 import Blog from './routes/Blog/index';
 import BlogHome from './routes/Home/index'
+import Map from './routes/Map/Map'
+import Chart from "./components/chart/chart"
 
 function App() {
   return (
@@ -17,10 +19,14 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/Report' element={<Report />} />
         <Route path='/GuideMe' element={<GuideMe />} />
+
         <Route path='/Register' element={<Register />} />
         <Route path='/LogIn' element={<LogIn />} />
         <Route path='/Settings' element={<Settings />} />
-      
+
+        <Route path='/Map' element={<Map />} />
+
+        <Route path='/Chart' element={<Chart/>} />
         <Route path='/Blog/:id' element={<Blog/>} />
         <Route path='/BlogHome' element={<BlogHome/>} />
       </Routes>
