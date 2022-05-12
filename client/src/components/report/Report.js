@@ -4,16 +4,21 @@ import { Link } from 'react-router-dom'
 import './ReportStyles.css'
 import Ambulance from '../../assets/ambulance.jpg'
 import Phone from '../../assets/sos.jpg'
+import Popup from "../popups/popup";
+import { useState } from "react"; 
+
+
 const Report = () => {
+    const[buttonPopup,setButtonPopup]= useState(false);
     return (
        <div className='Report'>
             <div className='left'>
                 <h1>Report an accident</h1>
                 <p>Simple tool that is going to help you report accident very shortly</p>
-                <Link to='/contact'>
-                    <button className='btn'>Alert</button>
-                </Link>
+                <button className='btn' onClick={() => setButtonPopup(true)}>Alert</button>
+               
             </div>
+            <Popup trigger={buttonPopup} setTrigger={setButtonPopup}></Popup>
         <div className='right'>
             <div className='img-container'>
                 <div className='image-stack top'>
@@ -25,6 +30,7 @@ const Report = () => {
               
             </div>
         </div>
+     
     </div>
     )
 }
