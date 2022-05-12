@@ -14,7 +14,7 @@ const initialViewState = {
   pitch: 50
 };
 
-export default function App() {
+export default function Map() {
   const [settings, setSettings] = useState({
     scrollZoom: true,
     boxZoom: true,
