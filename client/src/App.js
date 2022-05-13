@@ -11,6 +11,8 @@ import Blog from './routes/Blog/index';
 import BlogHome from './routes/Home/index'
 import Map from './routes/Map/Map'
 import Chart from "./components/chart/chart"
+import MyMap from "./components/MyMap"
+
 
 function App() {
   return (
@@ -24,7 +26,7 @@ function App() {
         <Route path='/LogIn' element={<LogIn />} />
         <Route path='/Settings' element={<Settings />} />
 
-        <Route path='/Map' element={<Map />} />
+        <Route path='/MyMap' element={<MyMap />} />
 
         <Route path='/Chart' element={<Chart/>} />
         <Route path='/Blog/:id' element={<Blog/>} />
