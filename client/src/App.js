@@ -9,7 +9,6 @@ import GuideMe from './routes/GuideMe';
 import Settings from './routes/Settings/Settings';
 import Blog from './routes/Blog/index';
 import BlogHome from './routes/Home/index'
-// import Map from './routes/Map/Map'
 import Chart from "./components/chart/chart"
 import MyMap from "./components/MyMap"
 
