@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "database": "c: && startMongoDB.bat",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "heroku-postbuild": "cd client && npm install --legacy-peer-deps && npm install --legacy-peer-deps --only=dev --no-shrinkwrap && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server",
     "build": "cd client && npm run build",
