@@ -2,7 +2,6 @@ import React from "react";
 import L from "leaflet";
 import 'leaflet/dist/leaflet.css';
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import Navbar from '../components/navbar/Navbar'
 
 
 function GetIcon(_iconSize, forecast) {
@@ -31,7 +30,6 @@ export default function MyMap() {
 
     return (
         <div>
-            <Navbar />
             <MapContainer className="map"
                 center={position}
                 zoom={10}

@@ -1,5 +1,6 @@
 .settings {
   display: flex;
+  /* width: 100% !important; */
 }
 
 .settingsWrapper {
@@ -117,4 +118,5 @@
 
 .buttons {
   text-align: center;
+  margin-top: 1rem;
 }

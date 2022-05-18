@@ -1,7 +1,6 @@
 import "./Settings.css";
 import { useState } from 'react'
 import { FaUserCircle } from 'react-icons/fa';
-import Navbar from '../../components/navbar/Navbar'
 import axios from 'axios'
 
 export default function Settings() {
@@ -17,10 +16,9 @@ export default function Settings() {
   return (
     <div className="settings">
       <div className="settingsWrapper" >
-        <Navbar />
         <form className="settingsForm" method="post" action={updateUrl}>
           <h1>UPDATE YOUR PROFILE </h1>
-          <FaUserCircle className="user" />
+          {/* <FaUserCircle className="user" /> */}
           <div className="settingsPP">
 
             <input
