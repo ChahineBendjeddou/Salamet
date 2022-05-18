@@ -1,11 +1,11 @@
 .settings {
   display: flex;
-  /* width: 100% !important; */
 }
 
 .settingsWrapper {
   flex: 9;
-  padding: 20px;
+  padding: 20px 0;
+  margin-top: 0;
 }
 
 .settingsTitle {

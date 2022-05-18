@@ -1,6 +1,5 @@
 import "./Settings.css";
 import { useState } from 'react'
-import { FaUserCircle } from 'react-icons/fa';
 import axios from 'axios'
 
 export default function Settings() {
@@ -18,7 +17,6 @@ export default function Settings() {
       <div className="settingsWrapper" >
         <form className="settingsForm" method="post" action={updateUrl}>
           <h1>UPDATE YOUR PROFILE </h1>
-          {/* <FaUserCircle className="user" /> */}
           <div className="settingsPP">
 
             <input
