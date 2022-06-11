@@ -18,7 +18,6 @@ export default function Settings() {
         <form className="settingsForm" method="post" action={updateUrl}>
           <h1>UPDATE YOUR PROFILE </h1>
           <div className="settingsPP">
-
             <input
               id="fileInput"
               type="file"
