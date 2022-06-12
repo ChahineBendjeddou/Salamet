@@ -11,7 +11,7 @@ import Blog from './routes/Blog/index';
 import BlogHome from './routes/Home/index'
 import MyMap from "./components/MyMap"
 import Navbar from "./components/navbar/Navbar"
-
+import AddPOST from "./routes/AddPost/add"
 
 function App() {
   return (
@@ -27,6 +27,7 @@ function App() {
         <Route path='/MyMap' element={<MyMap />} />
         <Route path='/Blog/:id' element={<Blog />} />
         <Route path='/BlogHome' element={<BlogHome />} />
+        <Route path='/AddPOST' element={<AddPOST />} />
       </Routes>
     </>
   );
