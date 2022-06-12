@@ -41,7 +41,7 @@ export default function Navbar() {
           <li className="topListItem">
             <Link className="link" to="/GuideMe">GUIDE ME</Link>
           </li>
-          {!user &&
+          {/* {!user &&
             <li className="topListItem">
               <Link className="link" to="/LogIn">
                 LOGIN
@@ -52,7 +52,7 @@ export default function Navbar() {
               <Link className="link" to="/Register">
                 REGISTER
               </Link>
-            </li>}
+            </li>} */}
 
           {user &&
             <li className="Settings">
@@ -66,18 +66,17 @@ export default function Navbar() {
             </li>
           }
 
-          {user &&
+          {/* {user &&
             <li className="topListItem">
               <a href="/logout">LOGOUT</a>
             </li>
-          }
+          } */}
 
         </ul>
       </div>
       <div className={click ? 'topRight' : 'topRight active'}>
 
         {user &&
-
           <Link className="link" to="/Settings">
             {/* <img
               className="topImg"
@@ -87,6 +86,21 @@ export default function Navbar() {
             <FaUserAlt className="topImg" />
           </Link>
         }
+        {user &&
+          <a href="/logout">LOGOUT</a>
+        }
+        {!user &&
+          <li className="topListItem">
+            <Link className="link" to="/LogIn">
+              LOGIN
+            </Link>
+          </li>}
+        {!user &&
+          <li className="topListItem">
+            <Link className="link" to="/Register">
+              REGISTER
+            </Link>
+          </li>}
         <div className='hamburger' onClick={handleClick}>
           {click ? (<FaTimes size={20} style={{ color: '#fff' }} />) : (<FaBars size={20} style={{ color: '#fff' }} />)}
         </div>
