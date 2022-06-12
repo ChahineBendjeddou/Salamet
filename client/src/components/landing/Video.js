@@ -11,7 +11,8 @@ const Video = () => {
             </video>
             <div className='content'>
                 <h1>SALAMAT</h1>
-                <p>DZ FIRST TRAFFIC SAFTY AGENCY</p>
+                <h3>DZ FIRST TRAFFIC SAFTY AGENCY</h3>
+                <h4>"15678 accident today"</h4>
                 <div>
                     <Link to='/Report' className='btn'>REPORT</Link>
                     <Link to='/GuideMe' className='btn btn-light'>GUIDE</Link>

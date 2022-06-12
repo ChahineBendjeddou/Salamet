@@ -37,7 +37,7 @@ export default function Settings() {
           <input type="number" id='phone' name='phone' required value={user.phone} onChange={(e) => { setUser({ ...user, phone: e.target.value }) }}></input>
           <div className="buttons">
             <button className="btn" type="submit">
-              UPDATE
+              UPDATE ACCOUNT
             </button>
             <button className="btn">
               <a href={deleteUrl}>DELETE ACCOUNT</a>
