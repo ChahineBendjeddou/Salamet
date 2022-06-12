@@ -1,0 +1,11 @@
+h1{
+    color: black;
+}
+p{
+    color: black;
+}
+.img{
+    align-items: center;
+    max-width: 50px;
+    max-height: 50px;
+}

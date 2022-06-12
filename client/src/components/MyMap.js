@@ -1,6 +1,7 @@
 import React from "react";
 import L from "leaflet";
 import 'leaflet/dist/leaflet.css';
+import './MyMap.css'
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
 
@@ -17,7 +18,7 @@ export default function MyMap() {
 
 
     const locations = [
-        { "name": "north", "position": [36.4667, 2.8167], "size": 30, "forecast": "fire" },
+        { "name": "car", "position": [36.4667, 2.8167], "size": 30, "forecast": "fire" },
         { "name": "north", "position": [36, 2], "size": 30, "forecast": "fire" },
         { "name": "north", "position": [36.5, 2.9], "size": 30, "forecast": "fire" },
         { "name": "north", "position": [35.4667, 2], "size": 30, "forecast": "fire" },
@@ -47,7 +48,13 @@ export default function MyMap() {
                         position={location.position}
                         icon={GetIcon(location.size, location.forecast)}>
                         <Popup>
+                            <h1>Accident</h1>
                             {location.name} - {location.forecast}
+                           
+                           <p>Description of the accident how did it happen the causes number of death</p>
+                        
+                          <img className="img" src={require('../assets/car.jpg')}/>
+                     
                         </Popup>
                     </Marker>
                 ))}
