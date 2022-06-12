@@ -130,6 +130,7 @@
 .topImg {
   width: 30px;
   height: 40px;
+  margin-right: 1rem;
   object-fit: cover;
   cursor: pointer;
 }
