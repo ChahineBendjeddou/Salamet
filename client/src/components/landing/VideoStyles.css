@@ -28,13 +28,20 @@
     color: #fff;
 }
 
-.hero p {
+.hero h3 {
     font-size: 1.8rem;
     font-weight: 200;
     text-transform: uppercase;
-    margin-bottom: 1.6rem;
     color: #fff;
 }
+.hero h4 {
+    font-size: 1.8rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
 
 .hero .btn {
     margin: 1rem .2rem;
