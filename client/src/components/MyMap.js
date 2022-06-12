@@ -48,13 +48,13 @@ export default function MyMap() {
                         position={location.position}
                         icon={GetIcon(location.size, location.forecast)}>
                         <Popup>
-                            <h1>Accident</h1>
+                            <h1 className='h1'>Accident</h1>
                             {location.name} - {location.forecast}
-                           
-                           <p>Description of the accident how did it happen the causes number of death</p>
-                        
-                          <img className="img" src={require('../assets/car.jpg')}/>
-                     
+
+                            <p className='p'>Description of the accident how did it happen the causes number of death</p>
+
+                            <img className="imgs" src={require('../assets/car.jpg')} />
+
                         </Popup>
                     </Marker>
                 ))}

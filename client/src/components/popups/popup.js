@@ -15,7 +15,9 @@ function popup(props) {
           <form>
             <h1>REPORT AN ACCIDENT</h1>
             <label>
-              <img src={ambulance}
+              <img
+                src={ambulance}
+                id='image1'
                 alt=""
                 className="addImg" />
             </label>
@@ -24,7 +26,17 @@ function popup(props) {
               <MdAddCircleOutline className="addIcon" /> ADD PICTURE
             </label>
 
-            <input id="fileInput" type="file" style={{ display: "none" }} />
+            <input id="fileInput" accept="image/*" type="file" onchange={(e) => {
+              const reader = new FileReader();
+              reader.addEventListener('load', () => {
+                document.querySelector('#image1').style.backgroundImage = `url(${reader.result})`;
+                // const image = document.getElementById('image');
+                // image.src = URL.createObjectURL(reader.result);
+              }
+              )
+              reader.readAsDataURL(this.files[0])
+            }}
+              style={{ display: "none" }} />
             <label>Description</label>
             <textarea placeholder="Add a description"></textarea>
 
@@ -32,6 +44,7 @@ function popup(props) {
           </form>
         </div>
       </div>
+
     </div>
   ) : "";
 }

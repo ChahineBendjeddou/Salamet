@@ -57,3 +57,7 @@ code {
 .btn:hover {
   background: rgba(7, 0, 44, 0.2);
 }
+
+.image-stack.top{
+  background : none;
+}

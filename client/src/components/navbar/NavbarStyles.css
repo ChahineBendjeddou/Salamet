@@ -78,7 +78,9 @@
   z-index: 999;
   font-family: "Josefin Sans", sans-serif;
 }
-
+.topLeft{
+  color : #fff !important;
+}
 .topLeft,
 .topRight {
   flex: 3;

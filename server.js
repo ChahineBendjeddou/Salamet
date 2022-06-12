@@ -6,8 +6,6 @@ const app = express()
 const path = require('path')
 const cors = require('cors')
 const DataBase = require('./database')
-const userRoutes = require('./routes/users')
-const blogRoutes = require('./routes/blogs')
 const session = require('express-session')
 const { corsOptions } = require('./middleware')
 const passport = require('passport')
@@ -35,7 +33,7 @@ const sessionConfig = {
     saveUninitialized: true,// don't create session until something stored
     cookie: {
         httpOnly: true,
-        // secure: true,
+        secure: true,
         expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
         maxAge: 1000 * 60 * 60 * 24 * 7
     }
@@ -52,9 +50,13 @@ passport.deserializeUser(User.deserializeUser())
 
 
 
+const userRoutes = require('./routes/users')
+const blogRoutes = require('./routes/blogs')
+//const reportAccidentRoutes = require('./routes/reportAccident')
 
 app.use('/', userRoutes)
 app.use('/blog', blogRoutes)
+// app.use('/report', reportAccidentRoutes)
 
 
 
