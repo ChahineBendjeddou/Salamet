@@ -4,7 +4,10 @@ import "../../routes/AddPost/add.css"
 import { MdAddCircleOutline } from "react-icons/md";
 import ambulance from '../../assets/ambulance.jpg'
 
-function popup(props) {
+
+function Popup(props) {
+ 
+
   return (props.trigger) ? (
     <div className='popup'>
       <div className='popup-inner'>
@@ -42,7 +45,8 @@ function popup(props) {
             <label>Description</label>
             <textarea placeholder="Add a description"></textarea>
 
-            <button className="button">SEND</button>
+            <button className="button" >SEND</button>
+          
           </form>
         </div>
       </div>
@@ -50,4 +54,4 @@ function popup(props) {
   ) : "";
 }
 
-export default popup
+export default Popup

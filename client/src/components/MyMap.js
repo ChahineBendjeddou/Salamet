@@ -52,9 +52,9 @@ export default function MyMap() {
                             {location.name} - {location.forecast}
 
                             <p className='p'>Description of the accident how did it happen the causes number of death</p>
-
+                            <div className='photo'>
                             <img className="imgs" src={require('../assets/car.jpg')} />
-
+                            </div>
                         </Popup>
                     </Marker>
                 ))}
