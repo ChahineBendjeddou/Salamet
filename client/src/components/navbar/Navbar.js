@@ -11,9 +11,12 @@ export default function Navbar() {
       .then(res => setUser(res.data))
       .catch(err => console.log(err))
   })
+
+
+
   const [click, setClick] = useState(false)
   const handleClick = () => setClick(!click)
-
+  console.log('currentUser : ' + window.currentUser)
   /* const [color, setColor] = useState(false)
     const changeColor =() => {
         if(window.scrollY >= 100) {
@@ -33,6 +36,7 @@ export default function Navbar() {
 
         <ul className={click ? 'nav-menu active' : 'nav-menu'} >
           <li className="topListItem">
+            {/* <Link className="link" to="/">HOME</Link> */}
             <Link className="link" to="/">HOME</Link>
           </li>
           <li className="topListItem">

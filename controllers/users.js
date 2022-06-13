@@ -12,8 +12,9 @@ module.exports.register = async (req, res, next) => {
             res.redirect('/')
         })
     } catch (error) {
-        console.log('err : ', error)
-        res.redirect('/register')
+        const errorMessage = encodeURIComponent(error.message)
+        console.log('err : ', error.message)
+        res.redirect('/register/?' + errorMessage)
     }
 }
 

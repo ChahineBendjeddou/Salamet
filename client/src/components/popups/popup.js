@@ -17,7 +17,7 @@ function popup(props) {
             <label>
               <img
                 src={ambulance}
-                id='image1'
+                id='image'
                 alt=""
                 className="addImg" />
             </label>
@@ -29,7 +29,7 @@ function popup(props) {
             <input id="fileInput" accept="image/*" type="file" onchange={(e) => {
               const reader = new FileReader();
               reader.addEventListener('load', () => {
-                document.querySelector('#image1').style.backgroundImage = `url(${reader.result})`;
+                document.querySelector('#image').style.backgroundImage = `url(${reader.result})`;
                 // const image = document.getElementById('image');
                 // image.src = URL.createObjectURL(reader.result);
               }
@@ -44,7 +44,6 @@ function popup(props) {
           </form>
         </div>
       </div>
-
     </div>
   ) : "";
 }

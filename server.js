@@ -52,12 +52,18 @@ passport.deserializeUser(User.deserializeUser())
 
 const userRoutes = require('./routes/users')
 const blogRoutes = require('./routes/blogs')
-//const reportAccidentRoutes = require('./routes/reportAccident')
+const reportAccidentRoutes = require('./routes/reportAccident')
 
 app.use('/', userRoutes)
 app.use('/blog', blogRoutes)
-// app.use('/report', reportAccidentRoutes)
+app.use('/report', reportAccidentRoutes)
 
+app.use((req, res, next) => {
+    res.locals.currentUser = req.user;
+    // res.locals.success = req.flash('success');
+    // res.locals.error = req.flash('error');
+    next();
+})
 
 
 // Serve any static files
