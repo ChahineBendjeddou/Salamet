@@ -12,7 +12,7 @@ const Form = () => {
     return (
         <div className='form'>
             <form action='/login' method='post'>
-                {errorMessage ? <h1>{errorMessage}</h1> : ''}
+                {errorMessage ? <h1 className="error">{errorMessage}</h1> : ''}
                 <label for='username'>Username</label>
                 <input type='text' id='username' name='username' autoFocus required></input>
                 <label for='password'>Password</label>

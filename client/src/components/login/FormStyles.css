@@ -39,3 +39,9 @@ form .question span{
     font-weight: 300px;
     text-transform: uppercase;
 }
+form .error{
+    color : red;
+    background:  rgba(255,255,255,.1);
+    padding: 10px 18px;
+    margin-bottom: 15px;
+}

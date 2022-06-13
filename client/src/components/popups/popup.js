@@ -37,6 +37,8 @@ function popup(props) {
               reader.readAsDataURL(this.files[0])
             }}
               style={{ display: "none" }} />
+            <label>Phone number</label>
+            <input type="text" id='phone' name='phone' required placeholder="Phone number"></input>
             <label>Description</label>
             <textarea placeholder="Add a description"></textarea>
 
