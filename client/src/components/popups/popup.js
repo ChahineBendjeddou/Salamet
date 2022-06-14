@@ -4,9 +4,7 @@ import "../../routes/AddPost/add.css"
 import { MdAddCircleOutline } from "react-icons/md";
 import ambulance from '../../assets/ambulance.jpg'
 
-
 function Popup(props) {
- 
 
   return (props.trigger) ? (
     <div className='popup'>
