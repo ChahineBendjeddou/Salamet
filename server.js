@@ -33,7 +33,7 @@ const sessionConfig = {
     saveUninitialized: true,// don't create session until something stored
     cookie: {
         httpOnly: true,
-        // secure: true,
+        // secure: true, //it needs HTTPS to work other wise the cookie wont be stored 
         expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
         maxAge: 1000 * 60 * 60 * 24 * 7
     }
