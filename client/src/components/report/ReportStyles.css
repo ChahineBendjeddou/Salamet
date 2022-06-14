@@ -53,6 +53,10 @@
   }
 
   .Report .img {
-    max-width: 80%;
-  }
+    max-width: 70%;
+}
+.Report .right {
+    margin: 30px;
+    
+}
 }
