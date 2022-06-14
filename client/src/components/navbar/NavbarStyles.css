@@ -155,6 +155,7 @@
   .hamburger {
     display: block;
     z-index: 12;
+    margin-left: -35px; 
   }
 
   .nav-menu {
