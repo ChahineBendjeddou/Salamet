@@ -10,7 +10,7 @@ const Form = () => {
   return (
     <div className="form">
       <form action='/register' method='post'>
-        {errorMessage ? <h1>{errorMessage}</h1> : ''}
+        {errorMessage ? <h2 className="error">{errorMessage}</h2> : ''}
         <h1>Register</h1>
         <label for='firstname'>FirstName</label>
         <input type="text" id='firstname' name='firstname' required placeholder="FirstName"></input>
