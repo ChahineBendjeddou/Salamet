@@ -121,7 +121,7 @@ export default function Navbar() {
           </li>}
         {!user &&
           <li className="topListItem hidden">
-            <Link className="link hidden" to="/Register">
+            <Link className="link " to="/Register">
               REGISTER
             </Link>
           </li>}
