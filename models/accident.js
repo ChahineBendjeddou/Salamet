@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const imageSchema = require('./image')
+
 
 const accidentSchema = new Schema({
 
@@ -7,7 +9,7 @@ const accidentSchema = new Schema({
     reporter: { type: Schema.Types.ObjectId, ref: 'User' },
     type: { type: String, required: true },
     discription: { type: String, required: true },
-    images: [String]
+    images: [imageSchema]
 }, { timestamps: true })
 
 
