@@ -1,11 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./FormStyles.css";
+import { useSearchParams } from "react-router-dom"
 
 const Form = () => {
+  let [errorMessage, setErrorMessage] = useSearchParams();
+  errorMessage = errorMessage.toString().replaceAll('+', ' ').replaceAll('=', ' ')
+  console.log(`errorMessage :${errorMessage}`)
   return (
     <div className="form">
       <form action='/register' method='post'>
+        {errorMessage ? <h1>{errorMessage}</h1> : ''}
         <h1>Register</h1>
         <label for='firstname'>FirstName</label>
         <input type="text" id='firstname' name='firstname' required placeholder="FirstName"></input>

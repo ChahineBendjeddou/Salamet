@@ -12,8 +12,13 @@ module.exports.register = async (req, res, next) => {
             res.redirect('/')
         })
     } catch (error) {
-        const errorMessage = encodeURIComponent(error.message)
-        console.log('err : ', error.message)
+        let errorMessage = encodeURIComponent(error.message)
+        let messageToReplace, isThereAchange = false
+        if (errorMessage.includes('email')) { messageToReplace = 'Email'; isThereAchange = true }
+        else if (errorMessage.includes('phone')) { messageToReplace = 'Phone Number'; isThereAchange = true }
+
+        if (isThereAchange) errorMessage = `A user with the given ${messageToReplace} is already registered`
+        console.log('err : ', errorMessage)
         res.redirect('/register/?' + errorMessage)
     }
 }
