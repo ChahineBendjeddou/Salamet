@@ -29,11 +29,11 @@ const sessionConfig = {
     store,
     name: 'session',
     secret,
-    resave: true,//don't save session if unmodified
+    resave: false,//don't save session if unmodified
     saveUninitialized: true,// don't create session until something stored
     cookie: {
         httpOnly: true,
-        secure: true,
+        // secure: true,
         expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
         maxAge: 1000 * 60 * 60 * 24 * 7
     }
