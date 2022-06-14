@@ -70,38 +70,58 @@ export default function Navbar() {
             </li>
           }
 
-          {/* {user &&
+          {click && user &&
+            <Link className="link topListItem" to="/Settings">
+              {/* <img
+                className="topImg"
+                src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                alt=""
+              /> */}
+              <FaUserAlt className="topImg" />
+            </Link>
+          }
+          {click && user &&
             <li className="topListItem">
               <a href="/logout">LOGOUT</a>
             </li>
-          } */}
-
+          }
+          {click && !user &&
+            <li className="topListItem">
+              <Link className="link" to="/LogIn">
+                LOGIN
+              </Link>
+            </li>}
+          {click && !user &&
+            <li className="topListItem">
+              <Link className="link" to="/Register">
+                REGISTER
+              </Link>
+            </li>}
         </ul>
       </div>
       <div className={click ? 'topRight' : 'topRight active'}>
-
         {user &&
-          <Link className="link" to="/Settings">
+          <Link className="link topListItem hidden" to="/Settings">
             {/* <img
-              className="topImg"
-              src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-              alt=""
-            /> */}
+                className="topImg"
+                src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                alt=""
+              /> */}
             <FaUserAlt className="topImg" />
           </Link>
         }
         {user &&
-          <a href="/logout">LOGOUT</a>
+          <a className='hidden' href="/logout">LOGOUT</a>
         }
         {!user &&
-          <li className="topListItem">
-            <Link className="link" to="/LogIn">
+          <li className="topListItem hidden">
+            <Link className="link " to="/LogIn">
               LOGIN
             </Link>
           </li>}
         {!user &&
-          <li className="topListItem">
-            <Link className="link" to="/Register">
+          <li className="topListItem hidden">
+            <Link className="link hidden" to="/Register">
               REGISTER
             </Link>
           </li>}
