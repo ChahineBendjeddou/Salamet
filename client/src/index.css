@@ -40,8 +40,11 @@ code {
 }
 
 .btn {
-  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   padding: 12px 32px;
+  align-self: center;
+  width: 80%;
   font-size: 1.2rem;
   text-transform: uppercase;
   background: transparent;
