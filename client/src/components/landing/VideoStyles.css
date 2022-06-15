@@ -56,6 +56,19 @@
         font-size: 1.4rem;
         margin-bottom: 1.6rem;
     }
+    .hero h3 {
+        font-size: 1.5rem;
+        font-weight: 200;
+        text-transform: uppercase;
+        color: #fff;
+    }
+    .hero h4 {
+        font-size: 1.3rem;
+        font-weight: 200;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        color: #fff;
+    }
 }
 
 

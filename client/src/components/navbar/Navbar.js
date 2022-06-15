@@ -30,7 +30,7 @@ export default function Navbar() {
   return (
     <div className="top">
       <div className="topLeft">
-        <h1>SALAMAT</h1>
+        <h1>SALAMET</h1>
       </div>
       <div className="topCenter">
 

@@ -10,7 +10,7 @@ const Video = () => {
                 <source src={trafficVideo} type='video/mp4' />
             </video>
             <div className='content'>
-                <h1>SALAMAT</h1>
+                <h1>SALAMET</h1>
                 <h3>DZ FIRST TRAFFIC SAFTY AGENCY</h3>
                 <h4>"15678 accident today"</h4>
                 <div>
