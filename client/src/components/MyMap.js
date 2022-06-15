@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from 'react'
 import L from "leaflet";
 import 'leaflet/dist/leaflet.css';
 import './MyMap.css'
+import "leaflet-routing-machine";
+import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
+import Paper from "@material-ui/core/Paper";
+import { makeStyles } from "@material-ui/core/styles";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import Routing from "./Routing";
+import citiesData from './data.json';
 
 
 function GetIcon(_iconSize, forecast) {
@@ -13,9 +21,35 @@ function GetIcon(_iconSize, forecast) {
     })
 }
 
+const useStyles = makeStyles(theme => ({
+    inputRoot: {
+      color: "blue",
+      "& .MuiOutlinedInput-notchedOutline": {
+        borderColor: "white"
+      },
+      "&:hover .MuiOutlinedInput-notchedOutline": {
+        borderColor: "white"
+      },
+      "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+        borderColor: "white"
+      }
+    },
+  }));
+
 export default function MyMap() {
+    const classes = useStyles();
     const position = [36.4667, 2.8167]
 
+    const [cities, setCities] = useState([]);
+    const [sourceCity, setSourceCity] = useState({});
+    const [destinationCity, setDestinationCity] = useState({});
+    
+  
+    useEffect(() => {
+      citiesData.map((eachCity) => 
+          setCities( cities => [ ...cities, eachCity ] )
+      )   
+    }, []);
 
     const locations = [
         { "name": "car", "position": [36.4667, 2.8167], "size": 30, "forecast": "fire" },
@@ -30,7 +64,54 @@ export default function MyMap() {
     ]
 
     return (
-        <div>
+        <div className="leaflet-container">
+             <div className="container">        
+        <Autocomplete
+          id="combo-box-demo"
+          options={cities}
+          onChange={(event, value) => setSourceCity(value)}          
+          classes={classes}
+          size='small'          
+          PaperComponent={({ children }) => (
+            <Paper style={{ background: "blue" }} elevation={10}>{children}</Paper>
+          )}          
+          getOptionLabel={(option) => `${option.city}, ${option.country}`}
+          inputRoot={{borderColor: "white"}}
+          style={{ width: 300, paddingBottom: '5%' }}
+          renderInput={(params) => <TextField 
+            {...params} 
+            color="secondary" 
+            label="Source" 
+            variant="outlined" 
+            InputLabelProps={{
+              style: { color: 'white' },
+            }}
+          />
+          }
+        />
+        <Autocomplete
+          id="combo-box-demo1"
+          classes={classes}
+          onChange={(event, value) => setDestinationCity(value)}          
+          options={cities}
+          size='small'
+          PaperComponent={({ children }) => (
+            <Paper style={{ background: "blue" }} elevation={10}>{children}</Paper>
+          )} 
+          getOptionLabel={(option) => `${option.city}, ${option.country}`}
+          style={{ width: 300, paddingBottom: '5%' }}          
+          renderInput={(params) => <TextField 
+            {...params} 
+            color="secondary" 
+            label="Destination" 
+            variant="outlined" 
+            InputLabelProps={{
+              style: { color: 'white' },
+            }}
+          />
+          }
+        />
+    </div>
             <MapContainer className="map"
                 center={position}
                 zoom={10}
@@ -58,8 +139,8 @@ export default function MyMap() {
                         </Popup>
                     </Marker>
                 ))}
-
-            </MapContainer>
+       <Routing sourceCity={sourceCity} destinationCity={destinationCity}/>       
+  </MapContainer>
         </div>
     )
 }

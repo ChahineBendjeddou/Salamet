@@ -14,3 +14,19 @@
     max-width: 200px;
     max-height: 200px;
 }
+.leaflet-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
+.container {
+    position: absolute;
+    width: 21%;
+    height: min-content;
+    /* background-color: black; */
+    z-index: 450;
+    display: flex;
+    flex-direction: column;
+    left: 6%;
+    top: 2%;
+  }
