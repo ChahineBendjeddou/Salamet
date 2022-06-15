@@ -28,7 +28,7 @@ function GetIcon(_iconSize, forecast) {
 
 const useStyles = makeStyles(theme => ({
   inputRoot: {
-    color: "blue",
+    color: "white",
     "& .MuiOutlinedInput-notchedOutline": {
       borderColor: "white"
     },
@@ -78,14 +78,14 @@ export default function MyMap() {
           classes={classes}
           size='small'
           PaperComponent={({ children }) => (
-            <Paper style={{ background: "blue" }} elevation={10}>{children}</Paper>
+            <Paper style={{ background: "white", color: "black" }} elevation={10}>{children}</Paper>
           )}
           getOptionLabel={(option) => `${option.city}, ${option.country}`}
-          inputRoot={{ borderColor: "white" }}
-          style={{ width: 300, paddingBottom: '5%' }}
+          inputRoot={{ borderColor: "white", color: "white" }}
+          style={{ width: 300, paddingBottom: '5%', color: "white" }}
           renderInput={(params) => <TextField
             {...params}
-            color="secondary"
+            color="white"
             label="Source"
             variant="outlined"
             InputLabelProps={{
@@ -101,13 +101,13 @@ export default function MyMap() {
           options={cities}
           size='small'
           PaperComponent={({ children }) => (
-            <Paper style={{ background: "blue" }} elevation={10}>{children}</Paper>
+            <Paper style={{ background: "white", color: "black" }} elevation={10}>{children}</Paper>
           )}
           getOptionLabel={(option) => `${option.city}, ${option.country}`}
           style={{ width: 300, paddingBottom: '5%' }}
           renderInput={(params) => <TextField
             {...params}
-            color="secondary"
+            color="white"
             label="Destination"
             variant="outlined"
             InputLabelProps={{
