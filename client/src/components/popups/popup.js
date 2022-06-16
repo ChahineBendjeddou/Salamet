@@ -6,7 +6,7 @@ import ambulance from '../../assets/ambulance.jpg'
 import addImg from './addImage'
 
 
-function Popup({closePopup}) {
+function Popup({ closePopup }) {
 
   useEffect(() => {
     addImg()
@@ -17,7 +17,7 @@ function Popup({closePopup}) {
     <div className='popup'>
       <div className='popup-inner'>
         <button className='close-btn' onClick={() => closePopup(false)}> X </button>
-        
+
         <div className="form">
           <form>
             <h1>REPORT AN ACCIDENT</h1>

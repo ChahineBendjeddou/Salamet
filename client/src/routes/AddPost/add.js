@@ -18,18 +18,12 @@ function Add() {
             alt=""
             className="addImg" />
         </label>
-
-        {/* <label htmlFor="fileInput" className="add">
-          <MdAddCircleOutline className="addIcon" /> ADD PICTURE
-        </label>
-
-        <input id="fileInput" type="file" style={{ display: "none" }} /> */}
         <label for='title'>Title</label>
-        <input type="text" id='title' name='title' placeholder="title"></input>
+        <input type="text" id='title' name='title' placeholder="title" required></input>
         <label for='description'>Description</label>
-        <textarea placeholder="Add a description" id='description' name='description'></textarea>
+        <textarea placeholder="Add a description" id='description' name='description' required></textarea>
         <label>Categorie</label>
-        <select id="BlogType" name="BlogType">
+        <select id="BlogType" name="BlogType" required>
           <option value="Car">Car</option>
           <option value="Accident">Accident</option>
           <option value="Health">Health</option>
@@ -39,9 +33,9 @@ function Add() {
           <option value="Crash">Crash</option>
           <option value="Help">Help</option>
         </select>
-        <input id="fileInput" accept="image/*" type="file" style={{ display: "none" }} enctype="multipart/form-data" />
+        <input id="fileInput" accept="image/*" type="file" style={{ display: "none" }} name='images' multiple />
         <div className="images" id='images'>
-          <div className="pic" >add Picture</div>
+          <div className="pic" name='pic'>add Picture</div>
         </div>
 
         <button className="button">ADD POST</button>

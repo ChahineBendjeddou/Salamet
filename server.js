@@ -55,7 +55,7 @@ const blogRoutes = require('./routes/blogs')
 const reportAccidentRoutes = require('./routes/reportAccident')
 
 app.use('/', userRoutes)
-app.use('/blog', blogRoutes)
+app.use('/', blogRoutes)
 app.use('/report', reportAccidentRoutes)
 
 app.use((req, res, next) => {

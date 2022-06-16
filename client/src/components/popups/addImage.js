@@ -1,6 +1,12 @@
 const addImage = () => {
     const images = document.getElementById("images");
-    let reader = new FileReader();
+    const uploader = document.getElementById("fileInput");
+    let selectedFile
+    let reader = []
+    for (let i = 0; i < 10; i++) {
+        reader[i] = new FileReader();
+    }
+    // const reader = new FileReader();
     function handleEvent(event) {
         if (event.type === "load") {
             const img = document.createElement("div");
@@ -8,28 +14,42 @@ const addImage = () => {
             span.innerText = "remove";
             img.className = "img";
             img.appendChild(span);
-            img.style.backgroundImage = `url('${reader.result}')`;
+            img.style.backgroundImage = `url('${event.target.result}')`;
             images.prepend(img);
-            span.addEventListener("click", () => img.remove());
+            span.addEventListener("click", () => {
+                img.remove()
+                if (images.children.length == 1) {
+                    pic.style.display = "block"
+                }
+            }
+            );
         }
     }
     if (images) {
         images.addEventListener("click", function (e) {
-            if (e.target.classList.contains("img")) e.target.remove();
+            if (e.target.classList.contains("img")) {
+                e.target.remove();
+                console.log(reader.length)
+                if (images.children.length == 1) {
+                    pic.style.display = "block"
+                }
+            };
         });
     }
 
     const pic = document.querySelector(".pic");
     if (pic) {
-        pic.addEventListener("click", () => {
-            const uploader = document.getElementById("fileInput");
+        pic.addEventListener("click", async () => {
             uploader.click();
             uploader.addEventListener("change", () => {
-                const selectedFile = uploader.files[0];
-                if (selectedFile) {
-                    reader.addEventListener("load", handleEvent);
-                    reader.readAsDataURL(selectedFile);
+                for (let i = 0; i < uploader.files.length; i++) {
+                    selectedFile = uploader.files[i]
+                    if (selectedFile) {
+                        reader[i].addEventListener("load", handleEvent);
+                        reader[i].readAsDataURL(selectedFile);
+                    }
                 }
+                pic.style.display = "none";
             });
         });
     }
