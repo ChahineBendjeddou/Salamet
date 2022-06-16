@@ -89,3 +89,13 @@ h1 {
     white-space: nowrap; 
     font-weight: bold;
 }
+
+@media screen and (max-width:1240px){
+  .addImg {
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    margin: 15px;
+  }
+}

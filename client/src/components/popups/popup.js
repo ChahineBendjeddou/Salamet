@@ -112,7 +112,7 @@ function Popup({ closePopup }) {
                     sx={{ background: "white" }} />}
                 renderValue={(selected) => (
                   <Box
-                    sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, color: "white" }}>
+                    sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, color: "white",borderColor: 'text.primary' }}>
                     {selected.map((value) => (
                       <Chip key={value} label={value} />
                     ))}
