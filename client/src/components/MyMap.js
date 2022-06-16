@@ -71,6 +71,8 @@ export default function MyMap() {
   return (
     <div className="leaflet-container">
       <div className="container">
+
+        
         <Autocomplete
           id="combo-box-demo"
           options={cities}
