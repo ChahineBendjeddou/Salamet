@@ -4,7 +4,9 @@ import "../../routes/AddPost/add.css"
 import './addImage.css'
 import ambulance from '../../assets/ambulance.jpg'
 import addImg from './addImage'
-function Popup(props) {
+
+
+function Popup({closePopup}) {
 
   useEffect(() => {
     addImg()
@@ -14,8 +16,8 @@ function Popup(props) {
   return (
     <div className='popup'>
       <div className='popup-inner'>
-        <button className='close-btn' onClick={() => props.setTrigger(false)}> X </button>
-        {props.children}
+        <button className='close-btn' onClick={() => closePopup(false)}> X </button>
+        
         <div className="form">
           <form>
             <h1>REPORT AN ACCIDENT</h1>

@@ -10,15 +10,17 @@ import { useState } from "react";
 
 const Report = () => {
     const[buttonPopup,setButtonPopup]= useState(false);
+
     return (
        <div className='Report'>
             <div className='left'>
                 <h1>Report an accident</h1>
                 <p>Simple tool that is going to help you report accident very shortly</p>
+
                 <button className='btn' onClick={() => setButtonPopup(true)}>Alert</button>
                
             </div>
-            <Popup trigger={buttonPopup} setTrigger={setButtonPopup}></Popup>
+            {buttonPopup && <Popup closePopup={setButtonPopup} />}
         <div className='right'>
             <div className='img-container'>
                 <div className='image-stack top'>

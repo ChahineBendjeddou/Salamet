@@ -30,3 +30,11 @@
     left: 6%;
     top: 2%;
   }
+
+  .leaflet-routing-container{
+    background-color: black;
+    color: white;
+  }
+ .leaflet-routing-alt{
+    color: white;
+ } 
