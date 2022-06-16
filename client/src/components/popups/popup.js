@@ -38,7 +38,7 @@ const names = [
   'Person',
   'People',
   'Object',
- 
+
 ];
 
 function getStyles(name, personName, theme) {
@@ -91,49 +91,51 @@ function Popup({ closePopup }) {
             <label>Description</label>
             <textarea placeholder="Add a description"></textarea>
 
-                <FormControl 
-                 sx={{ m: 1,
-                       width: 'auto',
-                       color: "white" }} >
-                <InputLabel id="demo-multiple-chip-label">Type</InputLabel>
+            <FormControl
+              sx={{
+                m: 1,
+                width: 'auto',
+                color: "white"
+              }} >
+              <InputLabel id="demo-multiple-chip-label">Type</InputLabel>
 
-                <Select
-                  labelId="demo-multiple-chip-label"
-                  id="demo-multiple-chip"
-                  multiple
-                  value={personName}
-                  onChange={handleChange}
-                  input={
-                  <OutlinedInput 
+              <Select
+                labelId="demo-multiple-chip-label"
+                id="demo-multiple-chip"
+                multiple
+                value={personName}
+                onChange={handleChange}
+                input={
+                  <OutlinedInput
                     id="select-multiple-chip"
-                    label="Chip" 
-                    sx={{background:"white"}} />}
-                  renderValue={(selected) => (
-                    <Box 
-                    sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, color:"white" }}>
-                      {selected.map((value) => (
-                        <Chip key={value} label={value} />
-                      ))}
-                    </Box>
-                  )}
-                  MenuProps={MenuProps}
-                >
+                    label="Chip"
+                    sx={{ background: "white" }} />}
+                renderValue={(selected) => (
+                  <Box
+                    sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, color: "white" }}>
+                    {selected.map((value) => (
+                      <Chip key={value} label={value} />
+                    ))}
+                  </Box>
+                )}
+                MenuProps={MenuProps}
+              >
 
-                  {names.map((name) => (
+                {names.map((name) => (
 
-                    <MenuItem
-                      key={name}
-                      value={name}
-                      style={getStyles(name, personName, theme)}
-                    >
-                      {name}
-                    </MenuItem>
-                  ))}
+                  <MenuItem
+                    key={name}
+                    value={name}
+                    style={getStyles(name, personName, theme)}
+                  >
+                    {name}
+                  </MenuItem>
+                ))}
 
-                </Select>
-              </FormControl>
+              </Select>
+            </FormControl>
 
-            <input id="fileInput" accept="image/*" type="file" style={{ display: "none" }} />
+            <input id="fileInput" accept="image/*" type="file" style={{ display: "none" }} name='images' multiple />
             <div className="images" id='images'>
               <div className="pic" >add Picture</div>
             </div>
