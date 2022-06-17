@@ -1,10 +1,38 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaBars, FaTimes, FaUserAlt } from 'react-icons/fa'
+import { IoSettingsOutline } from 'react-icons/io5'
+
 import "./NavbarStyles.css";
 import axios from "axios"
 
 export default function Navbar() {
+ //Weather stuff
+
+ const apiKey = "928fea09c159404164193e9dcb8821ce"
+ const [weatherData, setWeatherData] =useState({})
+
+
+ const getWeatherDetails = () =>{
+  const apiURL ="https://api.openweathermap.org/data/2.5/weather?q=blida&appid="+apiKey;
+  axios.get(apiURL).then((res) =>{
+    console.log("response",res.data)
+
+    setWeatherData(res.data)
+  }).catch((err) =>{
+    console.log("err", err)
+  })
+ }
+
+
+ useEffect(() => {
+     getWeatherDetails("Blida")
+ },[])
+
+
+
+
+
   //getting the currentUser from backend
   let [user, setUser] = useState(async () => {
     await axios.get('/getUser', { withCredentials: true })
@@ -36,6 +64,8 @@ export default function Navbar() {
             <Link className="link" to="/GuideMe">GUIDE ME</Link>
           </li>
 
+         
+
           {user &&
             <li className="Settings">
               <Link className="link" to="/Settings">SETTINGS</Link>
@@ -48,9 +78,13 @@ export default function Navbar() {
             </li>
           }
 
+          <li className="topListItem">
+            <h4>{((weatherData?.main?.temp)-273.15).toFixed(2)}°C</h4>
+          </li>
+
           {click && user &&
             <Link className="link topListItem" to="/Settings">
-              <FaUserAlt className="topImg" />
+              <IoSettingsOutline className="topImg" />
             </Link>
           }
           {click && user &&
