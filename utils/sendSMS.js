@@ -1,13 +1,24 @@
-const accountSid = process.env.TwilioAccountSid // || 'ACc3a94f1e27e167310a8fe2109d015220';
-const authToken = process.env.TwilioAuthToken // || 'e6c572dc95f1b1fef24f6ff45f77f0cc';
+const accountSid = process.env.TwilioAccountSid
+const authToken = process.env.TwilioAuthToken
+const chahinesPhone = process.env.ChahinesPhone
+const wafasPhone = process.env.WafasPhone
 const client = require('twilio')(accountSid, authToken);
 
 
-module.exports = async (message) => {
+module.exports.sendSMS = async (message) => {
     client.messages
         .create({
             body: message,
-            to: `+213672628437`,
+            to: chahinesPhone,
+            from: '+19804092494'
+        })
+        .then(message => console.log('message : ' + message))
+        .catch(error => console.log('error ' + error))
+        .done();
+    client.messages
+        .create({
+            body: message,
+            to: wafasPhone,
             from: '+19804092494'
         })
         .then(message => console.log('message : ' + message))
