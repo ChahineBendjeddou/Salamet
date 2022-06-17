@@ -3,10 +3,12 @@ const router = express.Router();
 const passport = require('passport');
 const catchAsync = require('../utils/catchAsync');
 const users = require('../controllers/users');
+const reportAccidents = require('../controllers/reportAccidents')
 
 router.post('/register', catchAsync(users.register))
 
 router.get('/getUser', users.sendUser)
+router.get('/getNumberOfAccidentsOfTheDay', reportAccidents.sendNumberOfAccidentsOfTheDay)
 
 const isLocalAuthenticated = function (req, res, next) {
     passport.authenticate('local', function (err, user, info) {

@@ -7,27 +7,25 @@ import "./NavbarStyles.css";
 import axios from "axios"
 
 export default function Navbar() {
- //Weather stuff
+  //Weather stuff
 
- const apiKey = "928fea09c159404164193e9dcb8821ce"
- const [weatherData, setWeatherData] =useState({})
-
-
- const getWeatherDetails = () =>{
-  const apiURL ="https://api.openweathermap.org/data/2.5/weather?q=blida&appid="+apiKey;
-  axios.get(apiURL).then((res) =>{
-    console.log("response",res.data)
-
-    setWeatherData(res.data)
-  }).catch((err) =>{
-    console.log("err", err)
-  })
- }
+  const apiKey = "928fea09c159404164193e9dcb8821ce"
+  const [weatherData, setWeatherData] = useState({})
 
 
- useEffect(() => {
-     getWeatherDetails("Blida")
- },[])
+  const getWeatherDetails = () => {
+    const apiURL = "https://api.openweathermap.org/data/2.5/weather?q=blida&appid=" + apiKey;
+    axios.get(apiURL).then((res) => {
+
+      setWeatherData(res.data)
+    }).catch((err) => {
+    })
+  }
+
+
+  useEffect(() => {
+    getWeatherDetails("Blida")
+  }, [])
 
 
 
@@ -49,7 +47,10 @@ export default function Navbar() {
     <div className="top">
       <div className="topLeft">
         <h1>SALAMET</h1>
+        <h4>{((weatherData?.main?.temp) - 273.15).toFixed(2)}°C</h4>
       </div>
+      {/* <li className="topListItem">
+      </li> */}
       <div className="topCenter">
 
         <ul className={click ? 'nav-menu active' : 'nav-menu'} >
@@ -64,7 +65,7 @@ export default function Navbar() {
             <Link className="link" to="/GuideMe">GUIDE ME</Link>
           </li>
 
-         
+
 
           {user &&
             <li className="Settings">
@@ -78,9 +79,6 @@ export default function Navbar() {
             </li>
           }
 
-          <li className="topListItem">
-            <h4>{((weatherData?.main?.temp)-273.15).toFixed(2)}°C</h4>
-          </li>
 
           {click && user &&
             <Link className="link topListItem" to="/Settings">

@@ -32,3 +32,18 @@ module.exports.report = async (req, res) => {
     // });
     res.redirect('/')
 }
+
+module.exports.sendNumberOfAccidentsOfTheDay = async (req, res) => {
+    const accidentsOfTheDay = await Accident.find({
+        $where: function () {
+            today = new Date();
+            today.setHours(0, 0, 0, 0);
+            return (this._id.getTimestamp() >= today)
+        }
+    })
+    console.log(accidentsOfTheDay.length)
+
+    res.send(accidentsOfTheDay)
+}
+
+
