@@ -29,7 +29,6 @@ const addImage = () => {
         images.addEventListener("click", function (e) {
             if (e.target.classList.contains("img")) {
                 e.target.remove();
-                console.log(reader.length)
                 if (images.children.length == 1) {
                     pic.style.display = "block"
                 }
@@ -53,5 +52,22 @@ const addImage = () => {
             });
         });
     }
+    //////////////GET GEOLOCATION/////////////////
+    const latitude = document.getElementById("latitude");
+    const longitude = document.getElementById("longitude");
+    function geoFindMe() {
+
+        function success(position) {
+            const l = position.coords.latitude;
+            const d = position.coords.longitude;
+            latitude.value = ''
+            longitude.value = ''
+            latitude.value = `${l}`;
+            longitude.value = `${d}`;
+        }
+
+        navigator.geolocation.getCurrentPosition(success);
+    }
+    geoFindMe()
 }
 export default addImage

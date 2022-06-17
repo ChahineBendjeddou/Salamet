@@ -26,13 +26,13 @@ const MenuProps = {
 
 const names = [
   'Car',
-  'multiple car',
+  'multiple cars',
   'Truck',
   'Multiple Trucks',
   'Heavey weight',
-  'Multiple heavy weight',
+  'Multiple heavy weights',
   'Light weight',
-  'Multiple light weight',
+  'Multiple light weights',
   'motocycle',
   'bicycle',
   'Person',
@@ -70,14 +70,13 @@ function Popup({ closePopup }) {
     addImg()
   }, [])
 
-  // return (props.trigger) ? (
   return (
     <div className='popup'>
       <div className='popup-inner'>
         <button className='close-btn' onClick={() => closePopup(false)}> X </button>
 
         <div className="form">
-          <form>
+          <form method="post" action='/report' enctype="multipart/form-data">
             <h1>REPORT AN ACCIDENT</h1>
             <label>
               <img
@@ -86,10 +85,10 @@ function Popup({ closePopup }) {
                 alt=""
                 className="addImg" />
             </label>
-            <label>Phone number</label>
-            <input type="text" id='phone' name='phone' required placeholder="Phone number"></input>
+            <label >Phone number</label>
+            <input type="number" id='phone' name='report[phone]' required placeholder="Phone number"></input>
             <label>Description</label>
-            <textarea placeholder="Add a description"></textarea>
+            <textarea placeholder="Add a description" name='report[description]'></textarea>
 
             <FormControl
               sx={{
@@ -97,9 +96,10 @@ function Popup({ closePopup }) {
                 width: 'auto',
                 color: "white"
               }} >
-              <InputLabel id="demo-multiple-chip-label">Type</InputLabel>
-
+              <InputLabel id="demo-multiple-chip-label" >Type</InputLabel>
               <Select
+                name='report[type]'
+                required
                 labelId="demo-multiple-chip-label"
                 id="demo-multiple-chip"
                 multiple
@@ -112,7 +112,7 @@ function Popup({ closePopup }) {
                     sx={{ background: "white" }} />}
                 renderValue={(selected) => (
                   <Box
-                    sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, color: "white",borderColor: 'text.primary' }}>
+                    sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, color: "white", borderColor: 'text.primary' }}>
                     {selected.map((value) => (
                       <Chip key={value} label={value} />
                     ))}
@@ -139,6 +139,8 @@ function Popup({ closePopup }) {
             <div className="images" id='images'>
               <div className="pic" >add Picture</div>
             </div>
+            <textarea name='report[latitude]' id='latitude' style={{ display: "none" }}></textarea>
+            <textarea name='report[longitude]' id='longitude' style={{ display: "none" }}></textarea>
             <button className="button" >SEND</button>
           </form>
         </div>
@@ -146,7 +148,6 @@ function Popup({ closePopup }) {
 
     </div>
   )
-  // : "";
 
 }
 

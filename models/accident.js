@@ -7,8 +7,9 @@ const accidentSchema = new Schema({
 
     location: { type: [Number], required: true },
     reporter: { type: Schema.Types.ObjectId, ref: 'User' },
+    phone: { type: Number },
     type: { type: String, required: true },
-    discription: { type: String, required: true },
+    description: { type: String, required: true },
     images: [imageSchema]
 }, { timestamps: true })
 
