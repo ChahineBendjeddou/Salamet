@@ -1,6 +1,12 @@
 const User = require('../models/user');
+const passport = require('passport');
 
-
+module.exports.login = (req, res) => {
+    res.redirect('/')
+}
+module.exports.sendUser = (req, res) => {
+    res.send(req.user)
+}
 
 module.exports.register = async (req, res, next) => {
     try {
@@ -23,12 +29,21 @@ module.exports.register = async (req, res, next) => {
     }
 }
 
-module.exports.login = (req, res) => {
-    res.redirect('/')
+
+module.exports.isLocalAuthenticated = (req, res, next) => {
+    passport.authenticate('local', function (err, user, info) {
+        if (err) { return next(err); }
+        if (!user) {
+            const errorMessage = encodeURIComponent(info.message)
+            res.redirect(`/login/? ${errorMessage}`)
+        } else {
+            req.logIn(user, function () {
+                res.redirect('/')
+            })
+        }
+    })(req, res, next);
 }
-module.exports.sendUser = (req, res) => {
-    res.send(req.user)
-}
+
 
 module.exports.updateUser = async (req, res, next) => {
     try {

@@ -7,7 +7,7 @@ import axios from 'axios'
 export default function Video() {
 
     let [numberOfAccidents, setNumberOfAccidents] = useState(async () => {
-        await axios.get('/getNumberOfAccidentsOfTheDay')
+        await axios.get('/report/getNumberOfAccidentsOfTheDay')
             .then(res => setNumberOfAccidents(res.data.length))
             .catch(err => console.log(err))
     })
