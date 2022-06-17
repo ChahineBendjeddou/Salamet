@@ -3,11 +3,10 @@ const router = express.Router();
 const catchAsync = require('../utils/catchAsync');
 const blogs = require('../controllers/blogs');
 const multer = require('multer')
-const upload = multer({ dest: 'uploads/' })
 
+const { storage } = require('../cloudinary')
+const upload = multer({ storage })
 
-router.post('/addBlog', upload.array('images', 10), (req, res) => {
-    console.log(req.files)
-    res.redirect('/BlogHome')
-})
+router.get('/getBlogs', blogs.sendBlogs)
+router.post('/addBlog', upload.array('images'), blogs.addBlog)
 module.exports = router;

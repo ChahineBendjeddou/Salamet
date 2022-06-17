@@ -19,11 +19,11 @@ function Add() {
             className="addImg" />
         </label>
         <label for='title'>Title</label>
-        <input type="text" id='title' name='title' placeholder="title" required></input>
+        <input type="text" id='title' name='blog[title]' placeholder="title" required></input>
         <label for='description'>Description</label>
-        <textarea placeholder="Add a description" id='description' name='description' required></textarea>
+        <textarea placeholder="Add a description" id='description' name='blog[body]' required></textarea>
         <label>Categorie</label>
-        <select id="BlogType" name="BlogType" required>
+        <select id="BlogType" name="blog[type]" required>
           <option value="Car">Car</option>
           <option value="Accident">Accident</option>
           <option value="Health">Health</option>
