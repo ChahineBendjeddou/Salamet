@@ -18,7 +18,6 @@ module.exports.report = async (req, res) => {
     accident.images = req.files.map(img => ({ url: img.path, filename: img.filename }))
     await accident.save()
     axios.request(options).then(function (response) {
-        console.log(response.data.results[4].address);
         const location = response.data.results[4].address
         // sms.sendSMS(`Hello Sir/Mdm, an accident of (${type})  in "${location}" has been report, if you are on road or gonna be, please drive safe. Salamet`)
     }).catch(function (error) {
@@ -35,9 +34,11 @@ module.exports.sendNumberOfAccidentsOfTheDay = async (req, res) => {
             return (this._id.getTimestamp() >= today)
         }
     })
-    console.log(accidentsOfTheDay.length)
-
     res.send(accidentsOfTheDay)
 }
 
 
+module.exports.sendAllAccidents = async (req, res) => {
+    const accidents = await Accident.find({})
+    res.send(accidents)
+}

@@ -16,12 +16,12 @@ export default function Video() {
     return (
         <div className='hero'>
             <video autoPlay loop muted id='video'>
-                <source src={trafficVideo} type='video/mp4' />
+                <source src='http://res.cloudinary.com/chahineyelpcamp/video/upload/ac_none,af_8000,q_auto:eco/v1655509923/Salamet/video_hecgjc.mp4' type='video/mp4' />
             </video>
             <div className='content'>
                 <h1>SALAMET</h1>
                 <h3>DZ FIRST TRAFFIC SAFTY AGENCY</h3>
-                {/* {typeof (numberOfAccidents) == 'number' ? <h4>{numberOfAccidents} accidents reported today</h4> : ""} */}
+                {typeof (numberOfAccidents) == 'number' ? <h4>{numberOfAccidents} accidents reported today</h4> : ""}
                 <div>
                     <Link to='/Report' className='btn'>REPORT</Link>
                     <Link to='/GuideMe' className='btn btn-light'>GUIDE</Link>

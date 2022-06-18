@@ -11,6 +11,7 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import Routing from "./Routing";
 import citiesData from './data.json';
+import axios from 'axios'
 
 const newData = citiesData.filter((city) => {
   return city.country === 'Algeria'
@@ -21,7 +22,7 @@ const newData = citiesData.filter((city) => {
 function GetIcon(_iconSize, forecast) {
 
   return L.icon({
-    iconUrl: require("../Static/Icons/" + forecast + ".png"),
+    iconUrl: 'http://res.cloudinary.com/chahineyelpcamp/image/upload/v1655510027/Salamet/fire_syq9kq.png',//require("../Static/Icons/fire.png"),
     iconSize: [_iconSize]
   })
 }
@@ -49,7 +50,14 @@ export default function MyMap() {
   const [sourceCity, setSourceCity] = useState({});
   const [destinationCity, setDestinationCity] = useState({});
 
+  const [accidents, setAccidents] = useState(async () => {
+    await axios.get('/report/getAllAccidents', { withCredentials: true })
+      .then(res => setAccidents(res.data))
+      .catch(err => console.log(err))
+  })
 
+  console.log(Array.isArray(accidents))
+  console.log(accidents)
   useEffect(() => {
     newData.map((eachCity) =>
       setCities(cities => [...cities, eachCity])
@@ -57,22 +65,22 @@ export default function MyMap() {
   }, []);
 
   const locations = [
-    { "name": "car", "position": [36.4667, 2.8167], "size": 30, "forecast": "fire" },
-    { "name": "north", "position": [36, 2], "size": 30, "forecast": "fire" },
-    { "name": "north", "position": [36.5, 2.9], "size": 30, "forecast": "fire" },
-    { "name": "north", "position": [35.4667, 2], "size": 30, "forecast": "fire" },
-    { "name": "north", "position": [36.1, 2.8], "size": 30, "forecast": "fire" },
-    { "name": "north", "position": [36.6, 3], "size": 30, "forecast": "fire" },
-    { "name": "north", "position": [36.4675, 2.9167], "size": 30, "forecast": "fire" },
-    { "name": "north", "position": [36.5, 2.5], "size": 30, "forecast": "fire" },
-    { "name": "north", "position": [36.5667, 2.8267], "size": 30, "forecast": "fire" },
+    { "type": "car", "position": [36.4667, 2.8167], 'createdAt': '2022-06-01' },
+    { "type": "car", "position": [36, 2], 'createdAt': '2022-06-01' },
+    { "type": "car", "position": [36.5, 2.9], 'createdAt': '2022-06-01' },
+    { "type": "car", "position": [35.4667, 2], 'createdAt': '2022-06-01' },
+    { "type": "car", "position": [36.1, 2.8], 'createdAt': '2022-06-01' },
+    { "type": "car", "position": [36.6, 3], 'createdAt': '2022-06-01' },
+    { "type": "car", "position": [36.4675, 2.9167], 'createdAt': '2022-06-01' },
+    { "type": "car", "position": [36.5, 2.5], 'createdAt': '2022-06-01' },
+    { "type": "car", "position": [36.5667, 2.8267], 'createdAt': '2022-06-01' },
   ]
 
   return (
     <div className="leaflet-container">
       <div className="container">
 
-        
+
         <Autocomplete
           id="combo-box-demo"
           options={cities}
@@ -134,14 +142,28 @@ export default function MyMap() {
         {locations.map((location) => (
           <Marker
             position={location.position}
-            icon={GetIcon(location.size, location.forecast)}>
+            icon={GetIcon(30, '')}>
             <Popup>
               <h1 className='h1'>Accident</h1>
-              {location.name} - {location.forecast}
+              {location.type} - {location.createdAt.slice(0, 10)}
 
               <p className='p'>Description of the accident how did it happen the causes number of death</p>
               <div className='photo'>
-                <img className="imgs" src={require('../assets/car.jpg')} />
+                <img className="imgs" src='http://res.cloudinary.com/chahineyelpcamp/image/upload/v1655509840/Salamet/car_neet3j.jpg' />{/*src={require('../assets/car.jpg')} */}
+              </div>
+            </Popup>
+          </Marker>
+        ))}
+        {Array.isArray(accidents) && accidents.map((accident) => (
+          <Marker
+            position={accident.location}
+            icon={GetIcon(30, '')}>
+            <Popup>
+              <h1 className='h1'>Accident</h1>
+              <h3 >{accident.type} '{accident.createdAt.slice(0, 10)}'</h3>
+              <p className='p'>{accident.description}</p>
+              <div className='photo'>
+                <img className="imgs" src={accident.images[0].url} />{/*src={require('../assets/car.jpg')} */}
               </div>
             </Popup>
           </Marker>

@@ -1,6 +1,6 @@
 import React from 'react'
 import './GuideMeStyles.css'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Map from '../../assets/map.jpg'
 import Phone from '../../assets/Phone.jpg'
 
@@ -15,13 +15,13 @@ const GuideMe = () => {
                 </Link>
             </div>
             <div className='right'>
-                
+
                 <div className='img-container'>
                     <div className='image-stack top'>
-                        <img src={Phone} className='img' alt='' />
+                        <img src='http://res.cloudinary.com/chahineyelpcamp/image/upload/v1655509791/Salamet/Phone_u6kenx.jpg' className='img' alt='' />
                     </div>
                     <div className='image-stack bottom'>
-                        <img src={Map} className='img' alt='' />
+                        <img src='http://res.cloudinary.com/chahineyelpcamp/image/upload/v1655509859/Salamet/map_xytqgu.jpg' className='img' alt='' />
                     </div>
                 </div>
             </div>

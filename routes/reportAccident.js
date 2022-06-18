@@ -7,6 +7,8 @@ const upload = multer({ storage })
 
 router.get('/getNumberOfAccidentsOfTheDay', reportAccidents.sendNumberOfAccidentsOfTheDay)
 
+router.get('/getAllAccidents', reportAccidents.sendAllAccidents)
+
 router.post('/', upload.array('images'), reportAccidents.report)
 
 module.exports = router;

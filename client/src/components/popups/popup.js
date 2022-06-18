@@ -80,7 +80,7 @@ function Popup({ closePopup }) {
             <h1>REPORT AN ACCIDENT</h1>
             <label>
               <img
-                src={ambulance}
+                src='http://res.cloudinary.com/chahineyelpcamp/image/upload/q_auto:low/v1655509848/Salamet/ambulance_xegenw.jpg'
                 id='image'
                 alt=""
                 className="addImg" />
