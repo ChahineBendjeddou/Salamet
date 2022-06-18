@@ -27,16 +27,18 @@ module.exports.report = async (req, res) => {
 }
 
 module.exports.sendNumberOfAccidentsOfTheDay = async (req, res) => {
-    const accidentsOfTheDay = await Accident.find({
-        $where: function () {
-            today = new Date();
-            today.setHours(0, 0, 0, 0);
-            return (this._id.getTimestamp() >= today)
-        }
-    })
-    res.send(accidentsOfTheDay)
-}
+    const accidentsOfTheDay = await Accident.find({})
 
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
+
+    let t = []
+    accidentsOfTheDay.map(e => {
+        if (e._id.getTimestamp() > today) t.push(e)
+    })
+    console.log(t)
+    res.send(t)
+}
 
 module.exports.sendAllAccidents = async (req, res) => {
     const accidents = await Accident.find({})
