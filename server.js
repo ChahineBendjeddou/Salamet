@@ -42,7 +42,7 @@ const sessionConfig = {
 }
 
 app.use(session(sessionConfig))
-// app.use(cors(corsOptions))
+app.use(cors(corsOptions))
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(express.urlencoded({ extended: true }))
