@@ -9,7 +9,7 @@ export const blogList = [
     authorName: 'John Doe',
     authorAvatar: '/assets/images/author.jpg',
     createdAt: 'June 03, 2022',
-    cover: '/assets/images/johannes-blenke-ClmRtzGBFtU-unsplash.jpg',
+    cover: 'https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655521162/Salamet/johannes-blenke-ClmRtzGBFtU-unsplash_jqvgt4.jpg',
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const blogList = [
     authorName: 'John Doe',
     authorAvatar: '/assets/images/author.jpg',
     createdAt: 'June 03, 2022',
-    cover: '/assets/images/johannes-blenke-ClmRtzGBFtU-unsplash.jpg',
+    cover: 'https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655521162/Salamet/johannes-blenke-ClmRtzGBFtU-unsplash_jqvgt4.jpg',
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ export const blogList = [
     authorName: 'John Doe',
     authorAvatar: '/assets/images/author.jpg',
     createdAt: 'June 03, 2022',
-    cover: '/assets/images/johannes-blenke-ClmRtzGBFtU-unsplash.jpg',
+    cover: 'https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655521162/Salamet/johannes-blenke-ClmRtzGBFtU-unsplash_jqvgt4.jpg',
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ export const blogList = [
     authorName: 'John Doe',
     authorAvatar: '/assets/images/author.jpg',
     createdAt: 'June 03, 2022',
-    cover: '/assets/images/johannes-blenke-ClmRtzGBFtU-unsplash.jpg',
+    cover: 'https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655521162/Salamet/johannes-blenke-ClmRtzGBFtU-unsplash_jqvgt4.jpg',
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ export const blogList = [
     authorName: 'John Doe',
     authorAvatar: '/assets/images/author.jpg',
     createdAt: 'June 03, 2022',
-    cover: '/assets/images/johannes-blenke-ClmRtzGBFtU-unsplash.jpg',
+    cover: 'https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655521162/Salamet/johannes-blenke-ClmRtzGBFtU-unsplash_jqvgt4.jpg',
   },
   {
     id: 6,
@@ -70,7 +70,7 @@ export const blogList = [
     authorAvatar: '/assets/images/author.jpg',
     createdAt: 'June 03, 2022',
     cover:
-      '/assets/images/johannes-blenke-ClmRtzGBFtU-unsplash.jpg',
+      'https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655521162/Salamet/johannes-blenke-ClmRtzGBFtU-unsplash_jqvgt4.jpg',
   },
   {
     id: 7,
@@ -82,6 +82,6 @@ export const blogList = [
     authorName: 'John Doe',
     authorAvatar: '/assets/images/author.jpg',
     createdAt: 'June 03, 2022',
-    cover: '/assets/images/johannes-blenke-ClmRtzGBFtU-unsplash.jpg',
+    cover: 'https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655521162/Salamet/johannes-blenke-ClmRtzGBFtU-unsplash_jqvgt4.jpg',
   },
 ];

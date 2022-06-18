@@ -21,7 +21,7 @@ export default function Video() {
             <div className='content'>
                 <h1>SALAMET</h1>
                 <h3>DZ FIRST TRAFFIC SAFTY AGENCY</h3>
-                {typeof (numberOfAccidents) == 'number' ? <h4>{numberOfAccidents} accidents reported today</h4> : ""}
+                {typeof (numberOfAccidents) == 'number' ? <h4>{numberOfAccidents} accident{numberOfAccidents == 1 ? '' : 's'} reported today</h4> : ""}
                 <div>
                     <Link to='/Report' className='btn'>REPORT</Link>
                     <Link to='/GuideMe' className='btn btn-light'>GUIDE</Link>

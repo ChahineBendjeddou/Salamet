@@ -24,7 +24,7 @@ const Blog = () => {
           authorName: `${blog.author.lastname} ${blog.author.firstname}`,
           authorAvatar: '/assets/images/author.jpg',
           createdAt: blog.createdAt.slice(0, 10),//.format('MMMM Do YYYY'), 
-          cover: blog.images[0].url
+          cover: blog.images[0] ? blog.images[0].url : 'https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655521162/Salamet/johannes-blenke-ClmRtzGBFtU-unsplash_jqvgt4.jpg'
         }))
         setDbBlogs(newdata)
       })
@@ -34,6 +34,7 @@ const Blog = () => {
   for (let i = 0; i < dbBlogs.length; i++) {
     blogList.unshift(dbBlogs[i])
   }
+  console
 
   useEffect(() => {
     let blog = blogList.find((blog) => blog.id === parseInt(id));
