@@ -13,6 +13,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
 
+
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
 const MenuProps = {
@@ -94,9 +95,12 @@ function Popup({ closePopup }) {
               sx={{
                 m: 1,
                 width: 'auto',
-                color: "white"
+                color: "white",
+                bgcolor:'#212121',
+               
               }} >
-              <InputLabel id="demo-multiple-chip-label" >Type</InputLabel>
+              <InputLabel id="demo-multiple-chip-label" sx={{color:'white'}}>Type</InputLabel>
+
               <Select
                 name='report[type]'
                 required
@@ -106,15 +110,17 @@ function Popup({ closePopup }) {
                 value={personName}
                 onChange={handleChange}
                 input={
+
                   <OutlinedInput
                     id="select-multiple-chip"
                     label="Chip"
-                    sx={{ background: "white" }} />}
+                   />}
                 renderValue={(selected) => (
+
                   <Box
-                    sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, color: "white", borderColor: 'text.primary' }}>
+                    sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5}}>
                     {selected.map((value) => (
-                      <Chip key={value} label={value} />
+                      <Chip key={value} label={value} sx={{bgcolor:'white'}} />
                     ))}
                   </Box>
                 )}
