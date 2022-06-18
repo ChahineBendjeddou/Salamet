@@ -6,11 +6,11 @@ import axios from 'axios'
 
 export default function Video() {
 
-    let [numberOfAccidents, setNumberOfAccidents] = useState(async () => {
-        await axios.get('/report/getNumberOfAccidentsOfTheDay')
-            .then(res => setNumberOfAccidents(res.data.length))
-            .catch(err => console.log(err))
-    })
+    // let [numberOfAccidents, setNumberOfAccidents] = useState(async () => {
+    //     await axios.get('/report/getNumberOfAccidentsOfTheDay')
+    //         .then(res => setNumberOfAccidents(res.data.length))
+    //         .catch(err => console.log(err))
+    // })
 
 
     return (
@@ -21,7 +21,7 @@ export default function Video() {
             <div className='content'>
                 <h1>SALAMET</h1>
                 <h3>DZ FIRST TRAFFIC SAFTY AGENCY</h3>
-                {typeof (numberOfAccidents) == 'number' ? <h4>{numberOfAccidents} accidents reported today</h4> : ""}
+                {/* {typeof (numberOfAccidents) == 'number' ? <h4>{numberOfAccidents} accidents reported today</h4> : ""} */}
                 <div>
                     <Link to='/Report' className='btn'>REPORT</Link>
                     <Link to='/GuideMe' className='btn btn-light'>GUIDE</Link>
