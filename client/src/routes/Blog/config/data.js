@@ -1,6 +1,6 @@
-export const blogList = [
+export let blogList = [
   {
-    id: 1,
+    id: '1',
     title: '10 ways to prevent car crashes',
     category: 'Safety',
     subCategory: ['accident', 'help', 'drive'],
@@ -12,7 +12,7 @@ export const blogList = [
     cover: 'https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655521162/Salamet/johannes-blenke-ClmRtzGBFtU-unsplash_jqvgt4.jpg',
   },
   {
-    id: 2,
+    id: '2',
     title: '10 ways to prevent car crashes',
     category: 'SOS',
     subCategory: ['accident', 'help', 'drive'],
@@ -24,7 +24,7 @@ export const blogList = [
     cover: 'https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655521162/Salamet/johannes-blenke-ClmRtzGBFtU-unsplash_jqvgt4.jpg',
   },
   {
-    id: 3,
+    id: '3',
     title: '10 ways to prevent car crashes',
     category: ' Donation',
     subCategory: ['accident', 'help', 'drive'],
@@ -36,7 +36,7 @@ export const blogList = [
     cover: 'https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655521162/Salamet/johannes-blenke-ClmRtzGBFtU-unsplash_jqvgt4.jpg',
   },
   {
-    id: 4,
+    id: '4',
     title: '10 ways to prevent car crashes',
     category: 'Help',
     subCategory: ['accident', 'help', 'drive'],
@@ -48,7 +48,7 @@ export const blogList = [
     cover: 'https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655521162/Salamet/johannes-blenke-ClmRtzGBFtU-unsplash_jqvgt4.jpg',
   },
   {
-    id: 5,
+    id: '5',
     title: '10 ways to prevent car crashes',
     category: 'Drive',
     subCategory: ['accident', 'help', 'drive'],
@@ -60,7 +60,7 @@ export const blogList = [
     cover: 'https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655521162/Salamet/johannes-blenke-ClmRtzGBFtU-unsplash_jqvgt4.jpg',
   },
   {
-    id: 6,
+    id: '6',
     title: '10 ways to prevent car crashes',
     category: 'Car',
     subCategory: ['accident', 'help', 'drive'],
@@ -73,7 +73,7 @@ export const blogList = [
       'https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655521162/Salamet/johannes-blenke-ClmRtzGBFtU-unsplash_jqvgt4.jpg',
   },
   {
-    id: 7,
+    id: '7',
     title: '10 ways to prevent car crashes',
     category: 'Accident',
     subCategory: ['accident', 'help', 'drive'],

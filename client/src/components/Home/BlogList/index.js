@@ -5,7 +5,7 @@ import './styles.css';
 const BlogList = ({ blogs }) => {
   return (
     <div className='blogList-wrap'>
-      {blogs.map((blog) => (
+      {[...new Map(blogs.map(v => [v.id, v])).values()].map((blog) => (
         <BlogItem blog={blog} />
       ))}
     </div>

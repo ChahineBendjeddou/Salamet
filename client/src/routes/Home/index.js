@@ -33,8 +33,7 @@ const Home = () => {
     blogList.unshift(dbBlogs[i])
   }
 
-
-
+  blogList = [...new Map(blogList.map(v => [v.id, v])).values()]
 
   const [blogs, setBlogs] = useState(blogList);
   const [searchKey, setSearchKey] = useState('');
