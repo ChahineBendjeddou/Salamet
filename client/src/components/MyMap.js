@@ -22,7 +22,7 @@ const newData = citiesData.filter((city) => {
 function GetIcon(_iconSize, forecast) {
 
   return L.icon({
-    iconUrl: 'http://res.cloudinary.com/chahineyelpcamp/image/upload/v1655510027/Salamet/fire_syq9kq.png',//require("../Static/Icons/fire.png"),
+    iconUrl: 'https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655510027/Salamet/fire_syq9kq.png',//require("../Static/Icons/fire.png"),
     iconSize: [_iconSize]
   })
 }
@@ -149,7 +149,7 @@ export default function MyMap() {
 
               <p className='p'>Description of the accident how did it happen the causes number of death</p>
               <div className='photo'>
-                <img className="imgs" src='http://res.cloudinary.com/chahineyelpcamp/image/upload/v1655509840/Salamet/car_neet3j.jpg' />{/*src={require('../assets/car.jpg')} */}
+                <img className="imgs" src='https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655509840/Salamet/car_neet3j.jpg' />{/*src={require('../assets/car.jpg')} */}
               </div>
             </Popup>
           </Marker>

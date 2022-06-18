@@ -18,10 +18,10 @@ const GuideMe = () => {
 
                 <div className='img-container'>
                     <div className='image-stack top'>
-                        <img src='http://res.cloudinary.com/chahineyelpcamp/image/upload/v1655509791/Salamet/Phone_u6kenx.jpg' className='img' alt='' />
+                        <img src='https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655509791/Salamet/Phone_u6kenx.jpg' className='img' alt='' />
                     </div>
                     <div className='image-stack bottom'>
-                        <img src='http://res.cloudinary.com/chahineyelpcamp/image/upload/v1655509859/Salamet/map_xytqgu.jpg' className='img' alt='' />
+                        <img src='https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655509859/Salamet/map_xytqgu.jpg' className='img' alt='' />
                     </div>
                 </div>
             </div>

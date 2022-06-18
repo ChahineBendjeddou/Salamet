@@ -81,7 +81,7 @@ function Popup({ closePopup }) {
             <h1>REPORT AN ACCIDENT</h1>
             <label>
               <img
-                src='http://res.cloudinary.com/chahineyelpcamp/image/upload/q_auto:low/v1655509848/Salamet/ambulance_xegenw.jpg'
+                src='https://res.cloudinary.com/chahineyelpcamp/image/upload/q_auto:low/v1655509848/Salamet/ambulance_xegenw.jpg'
                 id='image'
                 alt=""
                 className="addImg" />
@@ -96,10 +96,10 @@ function Popup({ closePopup }) {
                 m: 1,
                 width: 'auto',
                 color: "white",
-                bgcolor:'#212121',
-               
+                bgcolor: '#212121',
+
               }} >
-              <InputLabel id="demo-multiple-chip-label" sx={{color:'white'}}>Type</InputLabel>
+              <InputLabel id="demo-multiple-chip-label" sx={{ color: 'white' }}>Type</InputLabel>
 
               <Select
                 name='report[type]'
@@ -114,13 +114,13 @@ function Popup({ closePopup }) {
                   <OutlinedInput
                     id="select-multiple-chip"
                     label="Chip"
-                   />}
+                  />}
                 renderValue={(selected) => (
 
                   <Box
-                    sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5}}>
+                    sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                     {selected.map((value) => (
-                      <Chip key={value} label={value} sx={{bgcolor:'white'}} />
+                      <Chip key={value} label={value} sx={{ bgcolor: 'white' }} />
                     ))}
                   </Box>
                 )}
