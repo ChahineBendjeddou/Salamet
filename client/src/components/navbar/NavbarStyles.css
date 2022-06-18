@@ -81,6 +81,10 @@
 }
 
 @media screen and (max-width: 1240px) {
+  .top .topLeft{
+    margin-left: 5px;
+    align-items: center;
+  }
     .topLeft h1{
         padding-left: 40px;
         font-size: 25px;
