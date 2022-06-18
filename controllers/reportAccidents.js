@@ -14,11 +14,13 @@ module.exports.report = async (req, res) => {
             'X-RapidAPI-Host': 'trueway-geocoding.p.rapidapi.com'
         }
     };
-    accident.location = [latitude, longitude]
+    latitude ? accident.location = [latitude, longitude] : accident.location = [0, 0]
     accident.images = req.files.map(img => ({ url: img.path, filename: img.filename }))
     await accident.save()
+
     axios.request(options).then(function (response) {
-        const location = response.data.results[4].address
+        let location
+        response.data.results ? location = response.data.results[4].address : location = 'unknown location'
         // sms.sendSMS(`Hello Sir/Mdm, an accident of (${type})  in "${location}" has been report, if you are on road or gonna be, please drive safe. Salamet`)
     }).catch(function (error) {
         console.error(error);
@@ -36,7 +38,6 @@ module.exports.sendNumberOfAccidentsOfTheDay = async (req, res) => {
     accidentsOfTheDay.map(e => {
         if (e._id.getTimestamp() > today) t.push(e)
     })
-    console.log(t)
     res.send(t)
 }
 
