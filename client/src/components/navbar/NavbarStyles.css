@@ -11,6 +11,8 @@
 }
 .topLeft{
   color : #fff !important;
+  font-size: 1rem;
+  font-weight: 200;
 }
 .topLeft,
 .topRight {
@@ -131,4 +133,10 @@
   .hidden{
     display: none;
   }
+}
+
+.topLeft h4 {
+  font-size: .8rem;
+  font-weight: 100;
+  margin: 0 .5rem 0 1rem;
 }

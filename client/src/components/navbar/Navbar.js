@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaBars, FaTimes, FaUserAlt } from 'react-icons/fa'
 import { IoSettingsOutline } from 'react-icons/io5'
+import ReactAnimatedWeather from 'react-animated-weather'
 
 import "./NavbarStyles.css";
 import axios from "axios"
@@ -11,17 +12,18 @@ export default function Navbar() {
 
   const apiKey = "928fea09c159404164193e9dcb8821ce"
   const [weatherData, setWeatherData] = useState({})
-
+  const [iconUrl, setIconUrl] = useState()
 
   const getWeatherDetails = () => {
     const apiURL = "https://api.openweathermap.org/data/2.5/weather?q=blida&appid=" + apiKey;
     axios.get(apiURL).then((res) => {
 
       setWeatherData(res.data)
+      setIconUrl(`https://openweathermap.org/img/w/${res.data.weather[0].icon}.png`)
     }).catch((err) => {
     })
   }
-
+  console.log(iconUrl)
 
   useEffect(() => {
     getWeatherDetails("Blida")
@@ -42,15 +44,25 @@ export default function Navbar() {
 
   const [click, setClick] = useState(false)
   const handleClick = () => setClick(!click)
-
+  const defaults = {
+    icon: 'CLEAR_DAY',
+    color: 'white',
+    size: 20,
+    animate: true
+  };
   return (
     <div className="top">
       <div className="topLeft">
         <h1>SALAMET</h1>
-        <h4>{((weatherData?.main?.temp) - 273.15).toFixed(2)}°C</h4>
+        <h4>{((weatherData?.main?.temp) - 273.15).toFixed(2)}°C
+        </h4>
+        <ReactAnimatedWeather
+          icon={defaults.icon}
+          color={defaults.color}
+          size={defaults.size}
+          animate={defaults.animate}
+        />
       </div>
-      {/* <li className="topListItem">
-      </li> */}
       <div className="topCenter">
 
         <ul className={click ? 'nav-menu active' : 'nav-menu'} >

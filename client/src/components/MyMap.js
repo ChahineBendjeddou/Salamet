@@ -145,8 +145,7 @@ export default function MyMap() {
             icon={GetIcon(30, '')}>
             <Popup>
               <h1 className='h1'>Accident</h1>
-              {location.type} - {location.createdAt.slice(0, 10)}
-
+              <h3>{location.type} - {location.createdAt.slice(0, 10)}</h3>
               <p className='p'>Description of the accident how did it happen the causes number of death</p>
               <div className='photo'>
                 <img className="imgs" src='https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655509840/Salamet/car_neet3j.jpg' />{/*src={require('../assets/car.jpg')} */}
