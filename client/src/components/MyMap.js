@@ -163,7 +163,7 @@ export default function MyMap() {
               <h3 >{accident.type} '{accident.createdAt.slice(0, 10)}'</h3>
               <p className='p'>{accident.description}</p>
               <div className='photo'>
-                <img className="imgs" src={accident.images[0].url} />{/*src={require('../assets/car.jpg')} */}
+                <img className="imgs" src={accident.images[0] ? accident.images[0].url : 'https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655509840/Salamet/car_neet3j.jpg'} />{/*src={require('../assets/car.jpg')} */}
               </div>
             </Popup>
           </Marker>
