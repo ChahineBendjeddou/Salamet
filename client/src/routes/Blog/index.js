@@ -34,7 +34,6 @@ const Blog = () => {
   for (let i = 0; i < dbBlogs.length; i++) {
     blogList.unshift(dbBlogs[i])
   }
-  console
 
   useEffect(() => {
     let blog = blogList.find((blog) => blog.id === parseInt(id));
