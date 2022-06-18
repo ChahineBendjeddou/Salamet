@@ -20,5 +20,5 @@ module.exports.sendBlogs = async (req, res) => {
         }
     })
 
-    res.send(blogs)
+    res.send(newBlogs)
 }
