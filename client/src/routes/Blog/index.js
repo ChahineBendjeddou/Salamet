@@ -33,7 +33,7 @@ const Blog = () => {
             </div>
           </header>
           <img src={blog.cover} alt='cover' />
-          <p className='blog-desc'>{blog.description}</p>
+          <pre className='blog-desc'>{blog.description}</pre>
         </div>
       ) : (
         <EmptyList />

@@ -18,6 +18,5 @@ module.exports.sendBlogs = async (req, res) => {
         }
     })
 
-    console.log(blogs[0].images)
     res.send(blogs)
 }
