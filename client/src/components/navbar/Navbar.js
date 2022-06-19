@@ -53,13 +53,14 @@ export default function Navbar() {
     <div className="top">
       <div className="topLeft">
         <h1>SALAMET</h1>
-        <h4>{((weatherData?.main?.temp) - 273.15).toFixed(2)}°C
-        </h4>
+        <h2>{((weatherData?.main?.temp) - 273.15).toFixed(2)}°C
+        </h2>
         <ReactAnimatedWeather
           icon={defaults.icon}
           color={defaults.color}
           size={defaults.size}
           animate={defaults.animate}
+          alt=''
         />
       </div>
       <div className="topCenter">

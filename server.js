@@ -63,32 +63,28 @@ app.use('/report', reportAccidentRoutes)
 
 app.use((req, res, next) => {
     res.locals.currentUser = req.user;
-    // res.locals.success = req.flash('success');
-    // res.locals.error = req.flash('error');
     next();
 })
 
-app.use(expressStaticGzip('client/build', {
+app.use('/', expressStaticGzip('client/build', {
+    index: false,
     enableBrotli: true,
-    customCompressions: [{
-        encodingName: 'deflate',
-        fileExtension: 'zz'
-    }],
     orderPreference: ['br']
 }));
 
-
-// Serve any static files
-// app.use(express.static(path.join(__dirname, 'client/build')));
-// Handle React routing, return all requests to React app
-// app.get('*', function (req, res) {
-//     // res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-//     res.sendFile(expressStaticGzip('client/build'));
-// });
 app.get('*', expressStaticGzip(path.join(__dirname, 'client/build'), {
     enableBrotli: true
 }))
 
+app.get('*', (req, res) => {
+    res.redirect('/')
+})
+
+// app.use(express.static(path.join(__dirname, 'client/build')));
+// app.get('*', function (req, res) {
+//     res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+// });
+// app.get('*', path.join(__dirname, 'client/build', 'index.html'));
 
 const port = process.env.PORT || 5000
 app.listen(port, () => console.log('Server Started on port ' + port))

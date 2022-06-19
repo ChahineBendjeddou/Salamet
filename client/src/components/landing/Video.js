@@ -16,7 +16,8 @@ export default function Video() {
     return (
         <div className='hero'>
             <video autoPlay loop muted id='video'>
-                <source src='https://res.cloudinary.com/chahineyelpcamp/video/upload/ac_none,af_8000,q_auto:eco/v1655509923/Salamet/video_hecgjc.mp4' type='video/mp4' />
+                {/* <source src='https://res.cloudinary.com/chahineyelpcamp/video/upload/ac_none,af_8000,q_auto:eco/v1655509923/Salamet/video_hecgjc.mp4' type='video/mp4' /> */}
+                <source src='https://res.cloudinary.com/chahineyelpcamp/video/upload/ac_none,af_8000,br_8192k,q_auto:eco,vc_h264/v1655509923/Salamet/video_hecgjc.mp4' type='video/mp4' alt='' />
             </video>
             <div className='content'>
                 <h1>SALAMET</h1>
