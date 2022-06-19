@@ -14,6 +14,7 @@ const passport = require('passport')
 const User = require('./models/user')
 const LocalStrategy = require('passport-local')
 const MongoDBStore = require('connect-mongo')
+const expressStaticGzip = require('express-static-gzip')
 
 const secret = process.env.SECRET || 'thisshouldbeabettersecret!'
 
@@ -67,14 +68,26 @@ app.use((req, res, next) => {
     next();
 })
 
+app.use(expressStaticGzip('client/build', {
+    enableBrotli: true,
+    customCompressions: [{
+        encodingName: 'deflate',
+        fileExtension: 'zz'
+    }],
+    orderPreference: ['br']
+}));
+
 
 // Serve any static files
-app.use(express.static(path.join(__dirname, 'client/build')));
+// app.use(express.static(path.join(__dirname, 'client/build')));
 // Handle React routing, return all requests to React app
-app.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-});
-
+// app.get('*', function (req, res) {
+//     // res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+//     res.sendFile(expressStaticGzip('client/build'));
+// });
+app.get('*', expressStaticGzip(path.join(__dirname, 'client/build'), {
+    enableBrotli: true
+}))
 
 
 const port = process.env.PORT || 5000

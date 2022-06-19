@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { MdAddCircleOutline } from "react-icons/md";
 import "./add.css";
 import Ambulance from '../../assets/ambulance.jpg'
 import addImg from '../../components/popups/addImage'

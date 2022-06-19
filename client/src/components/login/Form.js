@@ -5,7 +5,7 @@ import { useSearchParams } from "react-router-dom"
 
 
 const Form = () => {
-    let [errorMessage, setErrorMessage] = useSearchParams();
+    let errorMessage = useSearchParams();
     errorMessage = errorMessage.toString().replaceAll('+', ' ').replaceAll('=', ' ')
 
     return (

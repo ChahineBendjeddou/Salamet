@@ -1,9 +1,6 @@
 import React from 'react'
 import '../hero/HeroImageStyles.css'
-import { Link } from 'react-router-dom'
 import './ReportStyles.css'
-import Ambulance from '../../assets/ambulance.jpg'
-import Phone from '../../assets/sos.jpg'
 import Popup from "../popups/popup";
 import { useState } from "react";
 

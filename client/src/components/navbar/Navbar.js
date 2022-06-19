@@ -23,7 +23,6 @@ export default function Navbar() {
     }).catch((err) => {
     })
   }
-  console.log(iconUrl)
 
   useEffect(() => {
     getWeatherDetails("Blida")

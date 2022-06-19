@@ -13,6 +13,7 @@
     "axios": "^0.27.0",
     "chart": "^0.1.2",
     "chartjs": "^0.3.24",
+    "compress-create-react-app": "^1.2.1",
     "gzipper": "^7.1.0",
     "leaflet": "^1.8.0",
     "leaflet-routing-machine": "^3.2.12",
@@ -34,7 +35,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "gzipper compress --verbose ./build",
+    "build": "react-scripts build && compress-cra",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "watch": "npm-watch"

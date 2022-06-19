@@ -148,7 +148,7 @@ export default function MyMap() {
               <h3>{location.type} - {location.createdAt.slice(0, 10)}</h3>
               <p className='p'>Description of the accident how did it happen the causes number of death</p>
               <div className='photo'>
-                <img className="imgs" src='https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655509840/Salamet/car_neet3j.jpg' />{/*src={require('../assets/car.jpg')} */}
+                <img className="imgs" src='https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655509840/Salamet/car_neet3j.jpg' alt='' />{/*src={require('../assets/car.jpg')} */}
               </div>
             </Popup>
           </Marker>
@@ -162,7 +162,7 @@ export default function MyMap() {
               <h3 >{accident.type} '{accident.createdAt.slice(0, 10)}'</h3>
               <p className='p'>{accident.description}</p>
               <div className='photo'>
-                <img className="imgs" src={accident.images[0] ? accident.images[0].url : 'https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655509840/Salamet/car_neet3j.jpg'} />{/*src={require('../assets/car.jpg')} */}
+                <img className="imgs" src={accident.images[0] ? accident.images[0].url : 'https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655509840/Salamet/car_neet3j.jpg'} alt='' />{/*src={require('../assets/car.jpg')} */}
               </div>
             </Popup>
           </Marker>

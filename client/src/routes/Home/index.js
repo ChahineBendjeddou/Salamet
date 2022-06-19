@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import EmptyList from '../../components/common/EmptyList/index';
 import BlogList from '../../components/Home/BlogList';
 import Header from '../../components/Home/Header';
