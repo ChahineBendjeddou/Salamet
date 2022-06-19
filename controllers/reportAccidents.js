@@ -21,7 +21,7 @@ module.exports.report = async (req, res) => {
     axios.request(options).then(function (response) {
         let location
         response.data.results ? location = response.data.results[4].address : location = 'unknown location'
-        // sms.sendSMS(`Hello Sir/Mdm, an accident of (${type})  in "${location}" has been report, if you are on road or gonna be, please drive safe. Salamet`)
+        sms.sendSMS(`Hello Sir/Mdm, an accident of (${type})  in "${location}" has been report, if you are on road or gonna be, please drive safe. Salamet`)
     }).catch(function (error) {
         console.error(error);
     });
