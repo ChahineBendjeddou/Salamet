@@ -13,6 +13,7 @@
     "axios": "^0.27.0",
     "chart": "^0.1.2",
     "chartjs": "^0.3.24",
+    "gzipper": "^7.1.0",
     "leaflet": "^1.8.0",
     "leaflet-routing-machine": "^3.2.12",
     "mapbox-gl": "^2.8.2",
@@ -58,8 +59,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gzipper": "^7.1.0"
   }
 }
