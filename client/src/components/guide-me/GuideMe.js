@@ -1,8 +1,6 @@
 import React from 'react'
 import './GuideMeStyles.css'
 import { Link } from 'react-router-dom'
-import Map from '../../assets/map.jpg'
-import Phone from '../../assets/Phone.jpg'
 
 const GuideMe = () => {
     return (

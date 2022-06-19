@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import './popup.css'
 import "../../routes/AddPost/add.css"
 import './addImage.css'
-import ambulance from '../../assets/ambulance.jpg'
 import addImg from './addImage'
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';

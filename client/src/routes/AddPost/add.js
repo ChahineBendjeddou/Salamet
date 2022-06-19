@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
-import { MdAddCircleOutline } from "react-icons/md";
 import "./add.css";
-import Ambulance from '../../assets/ambulance.jpg'
 import addImg from '../../components/popups/addImage'
 import '../../components/popups/addImage.css'
 
@@ -14,7 +12,7 @@ function Add() {
       <form method="post" action='/addBlog' enctype="multipart/form-data">
         <h1>ADD POST</h1>
         <label>
-          <img src={Ambulance}
+          <img src='https://res.cloudinary.com/chahineyelpcamp/image/upload/q_auto:low/v1655509848/Salamet/ambulance_xegenw.jpg'
             alt=""
             className="addImg" />
         </label>

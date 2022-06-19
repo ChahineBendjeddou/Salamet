@@ -18,7 +18,7 @@ const addImage = () => {
             images.prepend(img);
             span.addEventListener("click", () => {
                 img.remove()
-                if (images.children.length == 1) {
+                if (images.children.length === 1) {
                     pic.style.display = "block"
                 }
             }
@@ -29,7 +29,7 @@ const addImage = () => {
         images.addEventListener("click", function (e) {
             if (e.target.classList.contains("img")) {
                 e.target.remove();
-                if (images.children.length == 1) {
+                if (images.children.length === 1) {
                     pic.style.display = "block"
                 }
             };
