@@ -66,25 +66,25 @@ app.use((req, res, next) => {
     next();
 })
 
-app.use('/', expressStaticGzip('client/build', {
-    index: false,
-    enableBrotli: true,
-    orderPreference: ['br']
-}));
+// app.use('/', expressStaticGzip('client/build', {
+//     index: false,
+//     enableBrotli: true,
+//     orderPreference: ['br']
+// }));
 
-app.get('*', expressStaticGzip(path.join(__dirname, 'client/build'), {
-    enableBrotli: true
-}))
+// app.get('*', expressStaticGzip(path.join(__dirname, 'client/build'), {
+//     enableBrotli: true
+// }))
 
-app.get('*', (req, res) => {
-    res.redirect('/')
-})
+// app.get('*', (req, res) => {
+//     res.redirect('/')
+// })
 
-// app.use(express.static(path.join(__dirname, 'client/build')));
-// app.get('*', function (req, res) {
-//     res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-// });
-// app.get('*', path.join(__dirname, 'client/build', 'index.html'));
+
+app.use(express.static(path.join(__dirname, 'client/build')));
+app.get('*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
 
 const port = process.env.PORT || 5000
 app.listen(port, () => console.log('Server Started on port ' + port))
