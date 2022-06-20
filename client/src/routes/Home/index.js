@@ -12,8 +12,6 @@ const Home = () => {
   let [dbBlogs, setDbBlogs] = useState(async () => {
     await axios.get('/getBlogs', { withCredentials: true })
       .then(res => {
-        console.log('res.data')
-        console.log(res.data[0])
         const newdata = res.data.map(blog => ({
           id: blog._id,
           title: blog.title,
@@ -25,8 +23,6 @@ const Home = () => {
           createdAt: blog.createdAt.slice(0, 10),//.format('MMMM Do YYYY'), 
           cover: blog.images[0].url
         }))
-        console.log('newdata')
-        console.log(newdata)
         setDbBlogs(newdata)
       })
       .catch(err => console.log(err))
