@@ -18,7 +18,7 @@ module.exports.sendBlogs = async (req, res) => {
         if (!blog.images[0]) {
             blog.images.push({ url: 'https://res.cloudinary.com/chahineyelpcamp/image/upload/v1655521162/Salamet/johannes-blenke-ClmRtzGBFtU-unsplash_jqvgt4.jpg' })
         }
+        return blog
     })
-
     res.send(newBlogs)
 }
