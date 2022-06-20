@@ -54,7 +54,7 @@ const sendEmail = async ({ type, createdAt, phone, description, images }, locati
     console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
 
 }
-const getLocationAndSendMessage = (accident) => {
+const getLocationAndSendMessage = async (accident) => {
     const options = {
         method: 'GET',
         url: 'https://trueway-geocoding.p.rapidapi.com/ReverseGeocode',
@@ -64,11 +64,11 @@ const getLocationAndSendMessage = (accident) => {
             'X-RapidAPI-Host': 'trueway-geocoding.p.rapidapi.com'
         }
     };
-    axios.request(options).then(function (response) {
+    axios.request(options).then(async function (response) {
         let location
         response.data.results ? location = response.data.results[4].address : location = 'unknown location'
-        sms.sendSMS(`Hello Sir/Mdm, an accident of (${accident.type})  in "${location}" has been report, if you are on road or gonna be, please drive safe. Salamet`)
-        sendEmail(accident, location)
+        await sms.sendSMS(`Hello Sir/Mdm, an accident of (${accident.type})  in "${location}" has been report, if you are on road or gonna be, please drive safe. Salamet`)
+        await sendEmail(accident, location)
     }).catch(function (error) {
         console.error(error);
     });
@@ -81,7 +81,7 @@ module.exports.report = async (req, res) => {
     latitude ? accident.location = [latitude, longitude] : accident.location = [0, 0]
     accident.images = req.files.map(img => ({ url: img.path, filename: img.filename }))
     await accident.save()
-    getLocationAndSendMessage(accident)
+    await getLocationAndSendMessage(accident)
 
     res.redirect('/')
 }
