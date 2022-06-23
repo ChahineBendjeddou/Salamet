@@ -91,6 +91,12 @@ export default function Navbar() {
             </li>
           }
 
+         {user &&
+            <li className="topListItem">
+              <Link className="link" to="/Chart">STAT</Link>
+            </li>
+          }
+
 
           {click && user &&
             <Link className="link topListItem" to="/Settings">

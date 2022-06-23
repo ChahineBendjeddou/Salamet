@@ -11,6 +11,7 @@ import Blog from './routes/Blog/index';
 import BlogHome from './routes/Home/index'
 import MyMap from "./components/MyMap"
 import Navbar from "./components/navbar/Navbar"
+import Chart from "./routes/ChartPage"
 import AddPOST from "./routes/AddPost/add"
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path='/Blog/:id' element={<Blog />} />
         <Route path='/BlogHome' element={<BlogHome />} />
         <Route path='/AddPOST' element={<AddPOST />} />
+        <Route path='/Chart' element={<Chart />} />
       </Routes>
     </>
   );

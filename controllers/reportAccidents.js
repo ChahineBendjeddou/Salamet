@@ -4,6 +4,8 @@ const sms = require('../utils/sendSMS')
 
 module.exports.report = async (req, res) => {
     const { phone, description, type, latitude, longitude } = req.body.report
+    console.log(longitude)
+    console.log(latitude)
     const accident = new Accident({ phone, description, type })
     const options = {
         method: 'GET',
@@ -17,6 +19,8 @@ module.exports.report = async (req, res) => {
     latitude ? accident.location = [latitude, longitude] : accident.location = [0, 0]
     accident.images = req.files.map(img => ({ url: img.path, filename: img.filename }))
     await accident.save()
+
+    console.log(response.data.results[4])
 
     axios.request(options).then(function (response) {
         let location
