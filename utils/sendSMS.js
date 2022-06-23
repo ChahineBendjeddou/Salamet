@@ -12,7 +12,7 @@ module.exports.sendSMS = async (message) => {
             to: chahinesPhone,
             from: '+19804092494'
         })
-        .then(message => console.log('message : ' + message))
+        .then(message => console.log('message form twilio: ' + message))
         .catch(error => console.log('error ' + error))
         .done();
     client.messages
@@ -24,4 +24,5 @@ module.exports.sendSMS = async (message) => {
         .then(message => console.log('message : ' + message))
         .catch(error => console.log('error ' + error))
         .done();
+
 }

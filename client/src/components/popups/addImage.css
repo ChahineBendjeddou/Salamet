@@ -9,6 +9,7 @@
             flex-basis: 31%;
             margin-bottom: 10px;
             border-radius: 4px;
+            
         }
         .images .img {
             background-color: rgba(0, 0, 0, 0.055);
@@ -61,6 +62,8 @@
             /* color: #848EA1; */
             font-size: 12px;
             cursor: pointer;
+            width: 112px;
+            height: 93px;
         }
         
         @media screen and (max-width: 400px) {
