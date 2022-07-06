@@ -14,15 +14,16 @@ export default function BasicSelect() {
 
   return (
     <Box
-    sx={{ minWidth: 120, maxWidth:510, bgcolor: '#212121', }}>
+    sx={{ minWidth: 520, bgcolor: '#212121', }}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label"  sx={{ color: 'white'}}>State</InputLabel>
+        <InputLabel id="demo-simple-select-label" sx={{ color: 'white'}}  >State</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={state}
           label="State"
           onChange={handleChange}
+          sx={{ color: 'white'}}
         >
           <MenuItem value={16}>Algeria</MenuItem>
           <MenuItem value={9}>Blida</MenuItem>
