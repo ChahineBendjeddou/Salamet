@@ -2,11 +2,10 @@ const mongoose = require('mongoose')
 if (process.env.NODE_ENV !== "production") {
     require('dotenv').config();
 }
-const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/salamet'
-
+const dbUrl = 'mongodb://127.0.0.1:27017/salamet'
+// process.env.DB_URL ||
 console.log(dbUrl)
 class Database {
-
     constructor() {
         this.connect()
     }
@@ -16,5 +15,4 @@ class Database {
             .catch(err => console.log('Error connecting to database ' + err.message))
     }
 }
-
 module.exports = new Database()
