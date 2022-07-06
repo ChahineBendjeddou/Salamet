@@ -55,25 +55,40 @@ const sendEmail = async ({ type, createdAt, phone, description, images }, locati
 
 }
 const getLocationAndSendMessage = async (accident) => {
-    const options = {
-        method: 'GET',
-        url: 'https://trueway-geocoding.p.rapidapi.com/ReverseGeocode',
-        params: { location: `${accident.location[0]},${accident.location[1]}`, language: 'en' },
-        headers: {
-            'X-RapidAPI-Key': 'ddbc2c343emsh217a3aab6948e80p1db4adjsn71040e9446cc',
-            'X-RapidAPI-Host': 'trueway-geocoding.p.rapidapi.com'
-        }
-    };
-    axios.request(options).then(async function (response) {
-        let location
-        response.data.results ? location = response.data.results[4].address : location = 'unknown location'
-        await sms.sendSMS(`Hello Sir/Mdm, an accident of (${accident.type})  in "${location}" has been report, if you are on road or gonna be, please drive safe. Salamet`)
-        await sendEmail(accident, location)
-    }).catch(function (error) {
-        console.error(error);
-    });
-}
 
+    module.exports.report = async (req, res) => {
+        const { phone, description, type, latitude, longitude } = req.body.report
+        console.log(longitude)
+        console.log(latitude)
+        const accident = new Accident({ phone, description, type })
+
+        const options = {
+            method: 'GET',
+            url: 'https://trueway-geocoding.p.rapidapi.com/ReverseGeocode',
+            params: { location: `${accident.location[0]},${accident.location[1]}`, language: 'en' },
+            headers: {
+                'X-RapidAPI-Key': 'ddbc2c343emsh217a3aab6948e80p1db4adjsn71040e9446cc',
+                'X-RapidAPI-Host': 'trueway-geocoding.p.rapidapi.com'
+            }
+        };
+
+        latitude ? accident.location = [latitude, longitude] : accident.location = [0, 0]
+        accident.images = req.files.map(img => ({ url: img.path, filename: img.filename }))
+        await accident.save()
+
+        console.log(response.data.results[4])
+
+
+        axios.request(options).then(async function (response) {
+            let location
+            response.data.results ? location = response.data.results[4].address : location = 'unknown location'
+            await sms.sendSMS(`Hello Sir/Mdm, an accident of (${accident.type})  in "${location}" has been report, if you are on road or gonna be, please drive safe. Salamet`)
+            await sendEmail(accident, location)
+        }).catch(function (error) {
+            console.error(error);
+        });
+    }
+}
 
 module.exports.report = async (req, res) => {
     const { phone, description, type, latitude, longitude } = req.body.report
