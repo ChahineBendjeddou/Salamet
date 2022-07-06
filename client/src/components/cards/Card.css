@@ -1,0 +1,40 @@
+.card-container{
+  background-color:white;
+  color:black;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px -5px blue;
+  margin: 25px 50px 25px 10px;
+  padding: 5px;
+  justify-content: center;
+  transition: .5s;
+  animation: ease-in;
+}
+
+.card-container:hover{
+transform: scale(1.1);
+box-shadow: 0px 0px 15px 0px;
+}
+
+.image-container img{
+    overflow: hidden;
+    height:200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.card-title h3{
+    text-align: center;
+}
+.card-body p{
+    text-align: center;
+    color: black;
+}
+.card-body span{
+    text-align: center;
+    color: black;
+    font-size: 15px;
+    opacity: 50%;
+}

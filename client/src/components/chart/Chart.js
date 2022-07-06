@@ -13,7 +13,7 @@ ChartJS.register(
 const Chart = () => {
 
    var data = {
-        labels: ['Blida', 'Alger', 'Oran', 'Constontine', 'Skikda', 'Ouargla'],
+        labels: ['Blida', 'Alger', 'Oran', 'Constantine', 'Skikda', 'Ouargla'],
         datasets: [{
             label: '# of Votes',
             data: [12, 19, 3, 5, 2, 3],

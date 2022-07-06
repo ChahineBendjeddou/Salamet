@@ -64,3 +64,16 @@ code {
 .image-stack.top{
   background : none;
 }
+.CARDS{
+  display: flex;
+  margin: 15px 25px 15px 500px;
+}
+.ChartPage h1{
+  margin-top: 50px;
+}
+.Chartpage-chart{
+  margin: 70px;
+}
+.Chartpage-select{
+  margin-left:550px
+}
