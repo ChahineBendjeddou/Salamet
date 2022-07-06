@@ -3,6 +3,7 @@ const axios = require("axios");
 const sms = require('../utils/sendSMS')
 const nodemailer = require("nodemailer");
 
+<<<<<<< HEAD
 
 
 const sendEmail = async ({ type, createdAt, phone, description, images }, location) => {
@@ -55,6 +56,13 @@ const sendEmail = async ({ type, createdAt, phone, description, images }, locati
 
 }
 const getLocationAndSendMessage = async (accident) => {
+=======
+module.exports.report = async (req, res) => {
+    const { phone, description, type, latitude, longitude } = req.body.report
+    console.log(longitude)
+    console.log(latitude)
+    const accident = new Accident({ phone, description, type })
+>>>>>>> 7af08c8ddc86721bab16989a8452803de7ab7eaf
     const options = {
         method: 'GET',
         url: 'https://trueway-geocoding.p.rapidapi.com/ReverseGeocode',
@@ -64,6 +72,15 @@ const getLocationAndSendMessage = async (accident) => {
             'X-RapidAPI-Host': 'trueway-geocoding.p.rapidapi.com'
         }
     };
+<<<<<<< HEAD
+=======
+    latitude ? accident.location = [latitude, longitude] : accident.location = [0, 0]
+    accident.images = req.files.map(img => ({ url: img.path, filename: img.filename }))
+    await accident.save()
+
+    console.log(response.data.results[4])
+
+>>>>>>> 7af08c8ddc86721bab16989a8452803de7ab7eaf
     axios.request(options).then(async function (response) {
         let location
         response.data.results ? location = response.data.results[4].address : location = 'unknown location'
