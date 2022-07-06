@@ -73,10 +73,18 @@ code {
   margin-top: 50px;
 }
 .Chartpage-chart{
+  padding: 50px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
   margin: 70px;
 }
 .Chartpage-select{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.barchart{
+  padding: 50px;
+  border-radius: 10px;
+  background-color: rgba(39, 39, 39, 0.41);
 }

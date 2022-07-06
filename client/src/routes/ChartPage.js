@@ -25,6 +25,7 @@ const ChartPage = () => {
          <div className="Chartpage-select">
            <Select />
          </div>
+         
           <div className='Chartpage-chart'>
               <Chart />
           </div>      
