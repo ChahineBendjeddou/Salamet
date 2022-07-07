@@ -91,6 +91,7 @@ code {
 }
 .Chartpage-Pie{
   background-color: rgba(39,39,39,.41);
+  padding:20px;
   height: 500px;
   width: 500px;
   border-radius: 10px;
