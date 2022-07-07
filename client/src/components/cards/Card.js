@@ -13,8 +13,8 @@ function Card({title, imageUrl, body, more}) {
        </div>
 
        <div className="card-body">
-        <p> {body}</p>  
-        <span> {more} </span>
+        <p> {body} <br />  <span> {more} </span> </p>  
+       
        </div>
 
     </div>

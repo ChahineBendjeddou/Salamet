@@ -2,6 +2,7 @@ import React from 'react'
 import Chart from '../components/chart/Chart'
 import Card from '../components/cards/Card'
 import Select from '../components/cards/select'
+import Pie from '../components/chart/Pie'
 const ChartPage = () => {
     return (
 
@@ -25,10 +26,14 @@ const ChartPage = () => {
          <div className="Chartpage-select">
            <Select />
          </div>
-         
+
           <div className='Chartpage-chart'>
               <Chart />
-          </div>      
+          </div>   
+
+           <div className='Chartpage-Pie'>
+              <Pie />
+          </div>     
          
         </div>
     )

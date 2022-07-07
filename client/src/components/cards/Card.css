@@ -31,10 +31,11 @@ box-shadow: 0px 0px 15px 0px;
 .card-body p{
     text-align: center;
     color: black;
+    margin-bottom: 5px;
 }
 .card-body span{
     text-align: center;
     color: black;
-    font-size: 15px;
+    font-size: 13px;
     opacity: 50%;
 }
